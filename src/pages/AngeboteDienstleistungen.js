@@ -10,7 +10,12 @@ const AngeboteDienstleistungen = ({ match, history }) => {
   return (
     <>
       <h1>Angebote & Dienstleistungen</h1>
-      <pre>{JSON.stringify(match, null, 2)}</pre>
+      <p>
+        Aus ökologischen Gründen gelten die Richtpreise der Dienstleistungen für
+        Privathaushalte bis auf Weiteres nur für den Raum Basel. Ab einer
+        Entfernung von 20 km wird ein Wegzuschlag von CHF 2.50 pro 10 km
+        erhoben.
+      </p>
     </>
   );
 };

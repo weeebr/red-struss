@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Navigation from "./page-components/Navigation";
+import Footer from "./page-components/Footer";
 import {
   Aktuell,
   AngeboteDienstleistungen,
@@ -30,6 +31,7 @@ const App = (
         <Route path="/wissenswertes" component={Wissenswertes} />
         <Route component={NotFound} />
       </Switch>
+      <Footer />
     </div>
   </Router>
 );
