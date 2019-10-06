@@ -51,7 +51,7 @@ const UnserTeam = () => {
     <>
       <h1>Unser Team</h1>
       {mitarbeiter.map(m => (
-        <TeamMember member={m} />
+        <TeamMember key={m} member={m} />
       ))}
     </>
   );

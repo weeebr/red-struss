@@ -1,33 +1,25 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import styled from "styled-components";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: "100%",
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    flexBasis: "33.33%",
-    flexShrink: 0,
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary,
-  },
-}));
+const Accordeon = styled(ExpansionPanel)`
+  && {
+    box-shadow: none;
+  }
+`;
 
 export const LeitbildPhilosophie = () => {
-  const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = panel => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
+  React.useEffect(() => setExpanded("panel0"), []);
 
   const data = [
     {
@@ -62,32 +54,31 @@ export const LeitbildPhilosophie = () => {
   ];
 
   return (
-    <div className={classes.root}>
+    <>
       {data.map((d, idx) => (
-        <ExpansionPanel
+        <Accordeon
           expanded={expanded === `panel${idx}`}
           onChange={handleChange(`panel${idx}`)}
+          key={d.title}
         >
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1bh-content"
             id={`panel${idx}bh-header`}
           >
-            <Typography className={classes.heading}>{d.title}</Typography>
-            <Typography className={classes.secondaryHeading}>
-              {d.subtitle}
-            </Typography>
+            <Typography>{d.title}</Typography>
+            <Typography>{d.subtitle}</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
               {d.text.map(t => (
-                <p>{t}</p>
+                <span key={t}>{t}</span>
               ))}
             </Typography>
           </ExpansionPanelDetails>
-        </ExpansionPanel>
+        </Accordeon>
       ))}
-    </div>
+    </>
   );
 };
 
