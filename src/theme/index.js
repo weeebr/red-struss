@@ -5,11 +5,13 @@ import umweltschutzIcon from "../assets/images/footer/icon-umweltschutz.webp";
 import favIcon from "../assets/images/favicon.jpg";
 import phoneIcon from "../assets/images/footer/phone.svg";
 import emailIcon from "../assets/images/footer/email.svg";
+import { lighten } from "polished";
 
 export const colors = {
-  primaryRed: "#e40035",
-  textColor: "#30302F",
-  footerBg: "#151515",
+  primaryRed: "#e70036",
+  primaryAnthracite: "#3c3c3c",
+  textColor: lighten(0.1, "#000"), // 90% black
+  footerBg: lighten(0.1, "#000"),
 };
 
 export const device = {
@@ -33,8 +35,48 @@ export const icons = {
 };
 
 export const typography = {
-  h2: {
-    fontFamily: "sans-serif",
+  h1: {
+    textTransform: "uppercase",
+    fontFamily: "OpenSansLight",
+    fontSize: "28px",
+    fontWeight: 300,
+  },
+  h3: {
+    textTransform: "uppercase",
+    fontFamily: "OpenSansLight",
+    fontSize: "18px",
+    fontWeight: 300,
+  },
+
+  hauptTitel: {
+    fontSize: "25px",
+    fontFamily: "OpenSansBold",
+    color: lighten(0.1, "#000"),
+    marginBottom: "20px",
+  },
+  rubrikTitel: {
+    fontSize: "25px",
+    fontFamily: "OpenSans",
+  },
+  titel: {
+    fontSize: "20px",
+    fontFamily: "OpenSansBold, Calibri, sans-serif",
+  },
+  subTitel: {
+    fontSize: "18px",
+    fontFamily: "OpenSans",
+    textTransform: "uppercase",
+  },
+  leadText: {
+    fontFamily: "OpenSans",
+    borderTop: "1px solid currentColor",
+    borderBottom: "1px solid currentColor",
+    padding: "8px 0",
+  },
+  zitat: {
+    fontSize: "18px",
+    fontStyle: "italic",
+    textAlign: "center",
   },
 };
 
@@ -48,7 +90,4 @@ export const getString = stylings => {
   return result;
 };
 
-export const getAltText = icon => {
-  const { src } = icon;
-  return src.substring(src.lastIndexOf("/") + 1, src.indexOf("."));
-};
+export const pageFullWidth = 277 + 780; // nav + content

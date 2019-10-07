@@ -1,39 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { lighten } from "polished";
-import { colors, breakpoints, icons } from "../theme";
-import { Image } from "./../generic-components/Image";
+import { colors, icons, pageFullWidth } from "../theme";
+import Image from "./../generic-components/Image";
 import bgImage from "../assets/images/bg-dark.jpg";
 
 const Card = styled.div`
-  margin-top: 20px;
-  padding: 20px;
-  max-width: 200px;
+  padding: 30px;
+  max-width: 230px;
   min-height: 180px;
   background: ${lighten(0.05, colors.footerBg)};
   text-align: center;
   display: flex;
   flex-direction: column;
-
-  @media (max-width: 1075px) {
-    flex-basis: 44%;
-    max-width: unset;
-
-    &&:nth-child(even) {
-      margin-right: unset;
-    }
-  }
-
-  @media (max-width: 890px) {
-    &&& {
-      flex-basis: 100%;
-      margin-right: unset;
-    }
-  }
-
-  &:not(:last-child) {
-    margin-right: 20px;
-  }
+  margin: 20px 10px 0 10px;
 
   h3 {
     color: ${colors.primaryRed};
@@ -41,9 +21,8 @@ const Card = styled.div`
   }
 
   p {
-    color: ${lighten(0.15, colors.textColor)};
+    color: ${lighten(0.3, colors.textColor)};
     margin-bottom: 20px;
-    text-align: left;
   }
 
   .filler {
@@ -69,36 +48,49 @@ const FooterCard = ({ header, text, icon }) => {
 };
 
 const StyledFooter = styled.footer`
-  background: linear-gradient(rgba(11, 11, 11, 0.8), rgba(11, 11, 11, 0.8)),
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(${bgImage});
   color: white;
 
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+  }
+
   .wieso-wir {
-    padding: 20px 20px 60px 20px;
-    padding-top: 20px;
+    padding: 60px 20px 60px 40px;
     background: ${colors.footerBg};
 
     .footer-cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      margin-left: -10px;
     }
   }
 
   .contact {
-    padding: 60px 20px 20px 20px;
-    background: rgba(0, 0, 0, 0.5);
+    padding: 80px 20px 20px 20px;
     color: white;
-    min-height: 300px;
+    min-height: 180px;
+    width: 100%;
+    max-width: ${pageFullWidth}px;
+    margin: 0 auto;
+    text-align: center;
 
-    img {
-      position: relative;
-      top: 5px;
-      margin: 0 4px;
+    p {
+      margin: 0 0 15px 0;
+
+      img {
+        position: relative;
+        top: 5px;
+        margin: 0 4px;
+      }
     }
   }
 `;
-console.log(breakpoints.tablet);
 
 const Footer = () => {
   return (
@@ -132,11 +124,13 @@ const Footer = () => {
       <div className="contact">
         <h2>Kontakt</h2>
         <p>
-          <strong>RED Struss - Recycling & Eventdienstleistungen</strong>
-          &nbsp;|&nbsp;
-          <a href="tel:+41">
+          <strong>Recycling und Eventdienstleistungen Struss</strong>
+        </p>
+        <p>
+          Gundeldingerrain 10, 4053 Basel &nbsp;|&nbsp;
+          <a href="tel:+41774478765">
             <Image src={icons.phone} />
-            +41
+            077 447 87 65
           </a>
           &nbsp;|&nbsp;
           <a href="mailto:info@red-struss.com">

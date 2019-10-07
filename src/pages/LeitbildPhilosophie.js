@@ -5,10 +5,24 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import styled from "styled-components";
+import { typography, colors } from "./../theme";
 
-const Accordeon = styled(ExpansionPanel)`
-  && {
-    box-shadow: none;
+const Accordeon = styled.div`
+  &&&& {
+    margin-top: -4px;
+    margin-left: -24px;
+
+    & > div {
+      box-shadow: none;
+    }
+
+    .MuiExpansionPanelSummary-content {
+      margin: 0;
+
+      &:hover {
+        color: ${colors.primaryRed};
+      }
+    }
   }
 `;
 
@@ -54,31 +68,49 @@ export const LeitbildPhilosophie = () => {
   ];
 
   return (
-    <>
+    <Accordeon>
       {data.map((d, idx) => (
-        <Accordeon
-          expanded={expanded === `panel${idx}`}
-          onChange={handleChange(`panel${idx}`)}
-          key={d.title}
-        >
-          <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1bh-content"
-            id={`panel${idx}bh-header`}
+        <>
+          <ExpansionPanel
+            expanded={expanded === `panel${idx}`}
+            onChange={handleChange(`panel${idx}`)}
+            key={d}
           >
-            <Typography>{d.title}</Typography>
-            <Typography>{d.subtitle}</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              {d.text.map(t => (
-                <span key={t}>{t}</span>
-              ))}
-            </Typography>
-          </ExpansionPanelDetails>
-        </Accordeon>
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id={`panel${idx}bh-header`}
+            >
+              <p
+                style={{
+                  ...typography.h1,
+                  marginRight: 40,
+                }}
+              >
+                {d.title}
+              </p>
+              <p
+                style={{
+                  ...typography.h1,
+                  lineHeight: 1,
+                  paddingTop: 16,
+                  fontSize: 18,
+                }}
+              >
+                {d.subtitle}
+              </p>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Typography>
+                {d.text.map(t => (
+                  <span key={t}>{t}</span>
+                ))}
+              </Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+        </>
       ))}
-    </>
+    </Accordeon>
   );
 };
 

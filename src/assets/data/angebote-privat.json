@@ -1,0 +1,38 @@
+{
+  "info": "Aus ökologischen Gründen gelten die Richtpreise der Dienstleistungen für Privathaushalte bis auf Weiteres nur für den Raum Basel. Ab einer Entfernung von 20 km wird ein Wegzuschlag von CHF 2.50 pro 10 km erhoben.",
+  "angebote": [
+    {
+      "titel": "APC-Service",
+      "typ": "After-Party-Cleaning",
+      "bild": "apc",
+      "subtitel": "beinhaltet das Aufräumen sowie die Entsorgung des durch einen privaten Anlass entstandenen Mülls",
+      "text": [
+        "Kennen Sie das? Sie schmeissen eine Party, gehen vielleicht noch in den Ausgang - und dann stehen Sie plötzlich alleine da, mitten im grössten Chaos mit einem Berg von Flaschen und Dosen?",
+        "Für das sind wir da. Widmen Sie sich in Ruhe Ihrem Kater oder nutzen Sie Ihre kostbare Zeit anderweitig, während wir uns um die Unordnung kümmern. Wir bringen Ihre Wohnung oder Ihr Partylokal wieder in Ordnung und entsorgen das Leergut."
+      ],
+      "preis": "CHF 30.-"
+    },
+    {
+      "titel": "Recycling-Service",
+      "typ": "BASIC",
+      "bild": "basic",
+      "subtitel": "Abholung, Weiterverarbeitung und recyclinggerechte Entsorgung verschiedenster rezyklierbarer Abfälle",
+      "text": [
+        "Sammelt sich bei Ihnen auch Ihr Recyclinggut auf dem Balkon oder in der Küche solange, bis Sie sich fast schon einen halben Tag freinehmen müssten, um alles wegzubringen?",
+        "Sparen Sie sich diese Mühe, wir übernehmen das für Sie. Rufen Sie uns an, anstatt diesen mühsamen Gang zur nächsten Entsorgungsstelle endlos lange vor sich herzuschieben. Wir garantieren Ihnen die fachgerechte Entsorgung, bei der alles recycelt wird, was recycelt werden kann."
+      ],
+      "preis": "gemäss Preisliste oder Absprache"
+    },
+    {
+      "titel": "Recycling-Service",
+      "typ": "EVENT",
+      "bild": "event",
+      "subtitel": "Bereitstellung eines kompletten und simplen Entsorgungssystems für grössere private Anlässe samt Abholung und fachgerechter Entsorgung",
+      "text": [
+        "Planen Sie eine Party oder einen grösseren Anlass und würden gerne Ihren Müll sauber trennen?",
+        "Wir unterstützen Sie gerne. Fragen Sie uns an; alles, was wir benötigen, sind einige Angaben rund um Ihren Anlass, und wir werden Ihnen eine Offerte unterbreiten, welche sich für Sie lohnt."
+      ],
+      "preis": "auf Anfrage"
+    }
+  ]
+}

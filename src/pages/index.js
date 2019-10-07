@@ -1,10 +1,10 @@
 import Aktuell from "./Aktuell";
-import AngeboteDienstleistungen from "./AngeboteDienstleistungen";
+import AngeboteDienstleistungen from "./AngeboteDienstleistungen/AngeboteDienstleistungen";
 import Home from "./Home";
 import Kontakt from "./Kontakt";
 import LeitbildPhilosophie from "./LeitbildPhilosophie";
 import ReferenzenPartner from "./ReferenzenPartner";
-import UnserTeam from "./UnserTeam";
+import UnserTeam from "./UnserTeam/UnserTeam";
 import Wissenswertes from "./Wissenswertes";
 import NotFound from "./NotFound";
 

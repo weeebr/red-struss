@@ -1,0 +1,59 @@
+{
+  "angebote": [
+    {
+      "titel": "Alu-Sammlung",
+      "bild": "alu",
+      "typ": "ADVANCED",
+      "subtitel": "Vermietung von 1 Sammelcontainer inkl. 10 Sammelsäcken + 2 monatliche Leerungen",
+
+      "text": [
+        "Haben Sie viele Dosen, möchten aber nicht zu viele Abholungen und auch trotzdem nicht jedesmal warten, bis der Sack voll ist? Dann ist dieses Angebot perfekt für Sie: Ausgerüstet mit genügend Sammelsäcken können Sie jeden Sack verschliessen und wechseln, so oft Sie möchten, und bis zu zwei Mal im Monat holen wir Ihre Säcke ab.",
+        "Mit dieser Option werden Sie so gut wie nie zusätzliche Abholungen benötigen; das einzige, was Sie brauchen, ist etwas Platz für die Zwischenlagerung von geschlossenen Sammelsäcken. Unter Umständen werden Sie nicht einmal alle 24 Leerungen im Jahr brauchen und erhalten Ende Jahr noch Geld zurück"
+      ],
+      "preis": "CHF 11.50 / Monat"
+    },
+    {
+      "titel": "Alu-Sammlung",
+      "bild": "alu",
+      "typ": "BASIC",
+      "subtitel": "Vermietung von 1 Sammelcontainer inkl. 2 Sammelsäcken + 1 monatliche Leerung",
+      "text": [
+        "Bestimmt werden auch bei Ihnen Energy-Drinks wie RedBull konsumiert. Auch wenn Sie denken, für diese paar Dosen lohne sich eine Sammlung nicht - jede Dose kann wieder zur Dose werden, und auch Kleinvieh macht Mist.",
+        "Werfen Sie kein Alu in den Abfall, sammeln Sie jetzt und staunen Sie, was da trotzdem zusammenkommen kann!"
+      ],
+      "preis": "CHF 7.90 / Monat"
+    },
+    {
+      "titel": "PET-Sammlung",
+      "bild": "pet",
+      "typ": "BASIC",
+      "subtitel": "Vermietung von 1 Sammelcontainer inkl. 2 Sammelsäcken + 1 monatliche Leerung",
+      "text": [
+        "Fallen in Ihrem Betrieb PET-Flaschen an, aber nicht genug, um in absehbarer Zeit 5 Säcke für eine offizielle Gratisabholung zu erreichen? Fehlender Platz soll nicht das Problem sein.",
+        "Mieten Sie jetzt bei uns einen Sammelcontainer und wir kümmern uns darum, dass Ihre PET-Flaschen wieder zu PET-Flaschen werden."
+      ],
+      "preis": "CHF 9.90 / Monat"
+    },
+    {
+      "titel": "Recycling-Paket",
+      "bild": "paket",
+      "typ": "STANDARD",
+      "subtitel": "Vermietung von 2 Sammelcontainern inkl. 10 Sammelsäcken + 1 monatliche Leerung",
+      "text": [
+        "Wenn Sie noch gar nicht recyceln oder Ihre Sammlung regelmässig selbst entsorgen müssen, dann ist das die bequemste Lösung für Sie, denn mit den klassischen Sammelbehältern aus Pappe erhalten Sie praktische und attraktive Sammelbehältnisse und müssen sich ansonsten um nichts mehr kümmern, da wir auch die Entsorgung übernehmen."
+      ],
+      "preis": "CHF 14.50 / Monat"
+    },
+    {
+      "titel": "Recycling-Paket",
+      "bild": "paket",
+      "typ": "CARE",
+      "subtitel": "Vermietung von 2 Sammelcontainern inkl. 10 Sammelsäcken + 1 wöchentliche Leerung ​",
+      "text": [
+        "Haben Sie Bedenken, dass Ihre Sammlung schnell unangenehm riecht? Oder fällt bei Ihnen einfach viel Recyclinggut an?",
+        "Kein Problem: Wir leeren die Sammelcontainer, so oft Sie wollen. Wir möchten Lösungen, welche Sie zufriedenstellen, denn Recycling macht noch mehr Freude, wenn die Handhabung für Sie stimmt."
+      ],
+      "preis": " CHF 29.90 / Monat"
+    }
+  ]
+}
