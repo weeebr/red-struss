@@ -13,13 +13,16 @@ import {
   ReferenzenPartner,
   UnserTeam,
   Wissenswertes,
-  NotFound,
+  NotFound
 } from "./pages";
 import { Helmet } from "react-helmet";
 import GlobalStyle from "./GlobalStyle";
+import styled from "styled-components";
 
 // icon: type/png
 // shortcut icon: ICO
+
+const PagesWrapper = styled.div``;
 
 const Pages = () => {
   const [isNavigationOpen, setNavigationOpen] = React.useState(false);
@@ -32,13 +35,7 @@ const Pages = () => {
           setNavigationOpen={setNavigationOpen}
         />
 
-        <div
-          className="content"
-          style={{
-            marginRight: isNavigationOpen ? "-345px " : "20px",
-            marginTop: isNavigationOpen ? 159 : 0,
-          }}
-        >
+        <PagesWrapper className="content" isNavigationOpen={isNavigationOpen}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/aktuell" component={Aktuell} />
@@ -50,7 +47,7 @@ const Pages = () => {
             <Route path="/wissenswertes" component={Wissenswertes} />
             <Route component={NotFound} />
           </Switch>
-        </div>
+        </PagesWrapper>
       </div>
     </>
   );

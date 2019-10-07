@@ -91,8 +91,13 @@ const GlobalStyle = createGlobalStyle`
       max-width: ${pageFullWidth}px;
       width: 100%;
       margin: 0 auto;
+      padding: 0 20px;
 
       & > .content {
+
+        @media (max-width: 1066px) {
+          margin: 0 0 80px 0;
+        }
         margin: 0 20px 80px 0;
         background: white;
         padding: 40px;

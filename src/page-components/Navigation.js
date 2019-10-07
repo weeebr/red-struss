@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { colors } from "../theme";
+import { colors, pageFullWidth } from "../theme";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import OverlayBg from "./OverlayBg";
 import Hamburger from "./Hamburger";
@@ -9,20 +9,22 @@ import Hamburger from "./Hamburger";
 // prettier-ignore
 const StyledNavigation = styled.aside`
   transition: all 0.3s ease;
-  margin-left: -207px;
+  margin-left: 0;
   position: relative;
   height: 1px;
 
   &.open {
     width: 345px;
-    margin-left: 0;
-
+    left: 207px;
+    margin-right: 160px;
+  
     nav.mobile {
       position: fixed;
       top: 159px;
       opacity: 1;
       margin-right: 68px;
       height: 100vh;
+      background: black;
       z-index: 3;
     }
   }
@@ -32,9 +34,9 @@ const StyledNavigation = styled.aside`
     opacity: 0;
     transition: all 0.3s ease;
     box-shadow: none;
-    background: black;
-   
-  }
+    height: 1px;
+    margin-left: -229px;
+  } 
 
   nav {
     display: flex;
@@ -72,18 +74,24 @@ const StyledNavigation = styled.aside`
 `;
 
 const Navigation = ({ isOpen, setNavigationOpen }) => {
-  const hamburgerVisible = useMediaQuery("(max-width:1066px)");
+  const hamburgerVisible = useMediaQuery(`(max-width:${pageFullWidth + 60}px)`);
 
   return (
     <StyledNavigation className={isOpen ? "open" : null} isOpen={isOpen}>
-      <div onClick={() => setNavigationOpen(!isOpen)}>
+      <div
+        onClick={() => (hamburgerVisible ? setNavigationOpen(!isOpen) : null)}
+      >
         {hamburgerVisible && (
           <Hamburger isOpen={isOpen} onClick={setNavigationOpen} />
         )}
 
         {isOpen && <OverlayBg />}
 
-        <nav className={hamburgerVisible ? "mobile" : null}>
+        <nav
+          className={`${hamburgerVisible ? "mobile" : ""} ${
+            isOpen ? "open" : ""
+          }`}
+        >
           <NavLink to="/" exact activeClassName="active">
             Home
           </NavLink>

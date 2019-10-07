@@ -5,10 +5,9 @@ import { colors } from "./../theme";
 const StyledHamburger = styled.div`
   width: 48px;
   height: 48px;
-  margin: 0 20px;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 20px;
   z-index: 3;
   outline: none;
   cursor: pointer;
