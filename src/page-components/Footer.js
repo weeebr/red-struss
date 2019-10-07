@@ -57,6 +57,11 @@ const StyledFooter = styled.footer`
     text-transform: uppercase;
     margin-bottom: 40px;
     letter-spacing: 2px;
+    transition: all 0.6s ease;
+
+    &:hover {
+      color: ${colors.primaryRed};
+    }
   }
 
   .wieso-wir {
@@ -79,6 +84,10 @@ const StyledFooter = styled.footer`
     max-width: ${pageFullWidth}px;
     margin: 0 auto;
     text-align: center;
+
+    @media (max-width: 960px) {
+      width: calc(100% - 40px);
+    }
 
     p {
       margin: 0 0 15px 0;

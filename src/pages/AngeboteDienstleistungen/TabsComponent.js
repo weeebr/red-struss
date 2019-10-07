@@ -25,6 +25,10 @@ const StyledTabs = styled.div`
     .MuiTabs-flexContainer {
       background: white;
 
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
       .MuiTab-root {
         &.Mui-selected,
         &:focus,
@@ -37,7 +41,14 @@ const StyledTabs = styled.div`
 
     .MuiTabs-indicator {
       &[style] {
-        left: calc(100% - (${props => 3 - props.value} * 260px)) !important;
+        left: calc(33% * ${props => props.value}) !important;
+        width: 33% !important;
+
+        @media (max-width: 768px) {
+          width: 100% !important;
+          left: 0 !important;
+          top: calc(33% * ${props => props.value} + 48px) !important;
+        }
       }
       background-color: ${colors.primaryRed};
     }

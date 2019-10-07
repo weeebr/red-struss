@@ -14,7 +14,7 @@ const StyledNavigation = styled.aside`
   margin-right: 20px;
 
   &.open {
-    width: 345px;
+    margin-right: calc(277px + 68px - 20px);
     left: 207px;
   
     nav.mobile {
@@ -23,7 +23,12 @@ const StyledNavigation = styled.aside`
       opacity: 1;
       height: 100vh;
       background: black;
+      box-shadow: none;
       z-index: 3;
+
+      @media (max-width: 960px) {
+        top: 239px;
+      }
     }
   }
   

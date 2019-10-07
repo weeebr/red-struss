@@ -5,7 +5,7 @@ import OpenSansItalic from "./assets/fonts/OpenSans-Italic.ttf";
 import OpenSansLight from "./assets/fonts/OpenSans-Light.ttf";
 import OpenSans from "./assets/fonts/OpenSans-Regular.ttf";
 
-import { pageFullWidth, colors, typography, getString } from "./theme";
+import { colors, typography, getString } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -88,17 +88,25 @@ const GlobalStyle = createGlobalStyle`
     & > div {
       flex: 1 0 auto;
       display: flex;
-      max-width: ${pageFullWidth}px;
-      width: calc(100% - 40px);
       margin: 0 auto;
       padding: 0 20px;
       margin-bottom: 80px;
+
+      @media (max-width: 1048px) {
+        margin: 0 20px 80px 20px;
+        padding: 0;
+      }
 
       & > .content {
         background: white;
         padding: 40px;
         width: 100%;
         box-shadow: 0 0 14px #e0dfdf;
+        max-width: 842px;
+
+        @media (max-width: 1048px) {
+          width: calc(100% - 148px); 
+        }
       }
     }
   }

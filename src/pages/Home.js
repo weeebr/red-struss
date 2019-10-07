@@ -18,10 +18,6 @@ const StyledHome = styled.div`
     flex-wrap: wrap;
     margin-bottom: 20px;
     margin-left: -10px;
-
-    @media (max-width: 840px) {
-      flex-direction: column;
-    }
   }
 `;
 

@@ -11,17 +11,17 @@ export const colors = {
   primaryRed: "#e70036",
   primaryAnthracite: "#3c3c3c",
   textColor: lighten(0.1, "#000"), // 90% black
-  footerBg: lighten(0.1, "#000")
+  footerBg: lighten(0.1, "#000"),
 };
 
 export const device = {
   mobile: "767px",
-  tablet: "991px"
+  tablet: "991px",
 };
 
 export const breakpoints = {
   mobile: `@media (max-width:${device.mobile})`,
-  tablet: `@media (max-width:${device.tablet})`
+  tablet: `@media (max-width:${device.tablet})`,
 };
 
 export const icons = {
@@ -31,7 +31,7 @@ export const icons = {
   umweltschutz: umweltschutzIcon,
   favicon: favIcon,
   phone: phoneIcon,
-  email: emailIcon
+  email: emailIcon,
 };
 
 export const typography = {
@@ -39,45 +39,45 @@ export const typography = {
     textTransform: "uppercase",
     fontFamily: "OpenSansLight",
     fontSize: "28px",
-    fontWeight: 300
+    fontWeight: 300,
   },
   h3: {
     textTransform: "uppercase",
     fontFamily: "OpenSansLight",
     fontSize: "18px",
-    fontWeight: 300
+    fontWeight: 300,
   },
 
   hauptTitel: {
     fontSize: "25px",
     fontFamily: "OpenSansBold",
     color: lighten(0.1, "#000"),
-    marginBottom: "20px"
+    marginBottom: "20px",
   },
   rubrikTitel: {
     fontSize: "25px",
-    fontFamily: "OpenSans"
+    fontFamily: "OpenSans",
   },
   titel: {
     fontSize: "20px",
-    fontFamily: "OpenSansBold, Calibri, sans-serif"
+    fontFamily: "OpenSansBold, Calibri, sans-serif",
   },
   subTitel: {
     fontSize: "18px",
     fontFamily: "OpenSans",
-    textTransform: "uppercase"
+    textTransform: "uppercase",
   },
   leadText: {
     fontFamily: "OpenSans",
     borderTop: "1px solid currentColor",
     borderBottom: "1px solid currentColor",
-    padding: "8px 0"
+    padding: "8px 0",
   },
   zitat: {
     fontSize: "18px",
     fontStyle: "italic",
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 };
 
 export const getString = stylings => {
@@ -90,4 +90,4 @@ export const getString = stylings => {
   return result;
 };
 
-export const pageFullWidth = 297 + 780; // nav + content
+export const pageFullWidth = 297 + 922; // nav + content

@@ -7,14 +7,19 @@ const StyledHamburger = styled.div`
   height: 48px;
   position: absolute;
   top: 0;
-  right: 0;
+  margin-left: 0;
   z-index: 3;
   outline: none;
   cursor: pointer;
   background: ${colors.primaryRed};
+  transition: all 0.3s ease, background-color 0.6s ease;
 
   &:hover {
+    background: black;
+
     div {
+      background: ${colors.primaryRed};
+
       &:nth-child(1) {
         top: 14px;
       }
@@ -33,7 +38,11 @@ const StyledHamburger = styled.div`
   &.open {
     position: fixed;
     top: 159px;
-    left: 275px;
+    margin-left: 48px;
+
+    @media (max-width: 960px) {
+      top: 239px;
+    }
 
     div {
       &:nth-child(1) {
@@ -59,7 +68,7 @@ const StyledHamburger = styled.div`
     height: 2px;
     background: black;
     opacity: 1;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background-color 0.6s ease;
 
     &:nth-child(1) {
       top: 11px;
