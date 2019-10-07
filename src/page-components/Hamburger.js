@@ -41,7 +41,7 @@ const StyledHamburger = styled.div`
     margin-left: 48px;
 
     @media (max-width: 960px) {
-      top: 239px;
+      top: 235px;
     }
 
     div {

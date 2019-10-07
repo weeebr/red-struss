@@ -19,6 +19,15 @@ const StyledAngebote = styled.div`
     position: relative;
     overflow: hidden;
     margin-bottom: 60px;
+    transition: all 0.6s ease;
+
+    &:hover {
+      background: #bbd9f1;
+
+      &::before {
+        color: #88bee8;
+      }
+    }
 
     &::before {
       position: absolute;
@@ -29,6 +38,7 @@ const StyledAngebote = styled.div`
       font-family: serif;
       color: #8abbe2;
       font-style: italic;
+      transition: all 0.6s ease;
     }
 
     p {
@@ -46,10 +56,16 @@ const StyledAngebote = styled.div`
     background: #dedede;
     padding: 8px 16px;
     margin: 8px 0 8px 0;
+    transition: all 0.6s ease;
+
+    &:hover {
+      background: #d0d0d0;
+    }
   }
 
   .angebot {
     position: relative;
+    margin-bottom: 60px;
 
     .content {
       display: flex;

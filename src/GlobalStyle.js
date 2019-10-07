@@ -83,7 +83,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url(${bgImage});
+    background: linear-gradient(120deg, rgba(255,255,255,.9),rgba(231,0,54,.08)),url(${bgImage});
 
     & > div {
       flex: 1 0 auto;

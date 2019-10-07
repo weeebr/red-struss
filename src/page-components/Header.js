@@ -19,7 +19,7 @@ const StyledHeader = styled.header`
 
   @media (max-width: 960px) {
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 24px;
     width: unset;
   }
 
@@ -28,14 +28,13 @@ const StyledHeader = styled.header`
     font-family: OpenSansBold;
     text-transform: uppercase;
     letter-spacing: unset;
-    background: ${colors.primaryAnthracite};
+    background: black;
     color: white;
     padding: 3px 10px;
-    transition: 0.6s ease;
+    transition: 0.3s ease;
 
     &:hover {
-      background: ${colors.primaryRed};
-      color: black;
+      background: ${colors.primaryAnthracite};
     }
 
     @media (max-width: 960px) {
@@ -50,6 +49,11 @@ const Logo = styled.div`
 
   img {
     width: 100%;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `;
 

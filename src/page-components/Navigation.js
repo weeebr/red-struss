@@ -27,7 +27,7 @@ const StyledNavigation = styled.aside`
       z-index: 3;
 
       @media (max-width: 960px) {
-        top: 239px;
+        top: 235px;
       }
     }
   }

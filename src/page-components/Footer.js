@@ -5,52 +5,11 @@ import { colors, icons, pageFullWidth } from "../theme";
 import Image from "./../generic-components/Image";
 import bgImage from "../assets/images/bg-dark.jpg";
 
-const Card = styled.div`
-  padding: 30px;
-  max-width: 230px;
-  min-height: 180px;
-  background: ${lighten(0.05, colors.footerBg)};
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  margin: 20px 10px 0 10px;
-
-  h3 {
-    color: ${colors.primaryRed};
-    margin-bottom: 10px;
-  }
-
-  p {
-    color: ${lighten(0.3, colors.textColor)};
-    margin-bottom: 20px;
-  }
-
-  .filler {
-    flex-grow: 1;
-  }
-
-  .img-wrapper {
-    justify-self: flex-end;
-  }
-`;
-
-const FooterCard = ({ header, text, icon }) => {
-  return (
-    <Card>
-      <h3>{header}</h3>
-      <p>{text}</p>
-      <div className="filler"></div>
-      <div className="img-wrapper">
-        <Image src={icon} />
-      </div>
-    </Card>
-  );
-};
-
 const StyledFooter = styled.footer`
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  background: linear-gradient(10deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8)),
     url(${bgImage});
   color: white;
+  padding-bottom: 120px;
 
   h2 {
     text-align: center;
@@ -66,7 +25,8 @@ const StyledFooter = styled.footer`
 
   .wieso-wir {
     padding: 60px 20px 60px 40px;
-    background: ${colors.footerBg};
+    background: #020202;
+    box-shadow: 0 4px 8px 5px black;
 
     .footer-cards {
       display: flex;
@@ -149,6 +109,53 @@ const Footer = () => {
         </p>
       </div>
     </StyledFooter>
+  );
+};
+
+const Card = styled.div`
+  padding: 30px;
+  max-width: 230px;
+  min-height: 180px;
+  background: #0c0c0c;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 10px 0 10px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #070707;
+  }
+
+  h3 {
+    color: ${colors.primaryRed};
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: ${lighten(0.3, colors.textColor)};
+    margin-bottom: 20px;
+  }
+
+  .filler {
+    flex-grow: 1;
+  }
+
+  .img-wrapper {
+    justify-self: flex-end;
+  }
+`;
+
+const FooterCard = ({ header, text, icon }) => {
+  return (
+    <Card>
+      <h3>{header}</h3>
+      <p>{text}</p>
+      <div className="filler"></div>
+      <div className="img-wrapper">
+        <Image src={icon} />
+      </div>
+    </Card>
   );
 };
 
