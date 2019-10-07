@@ -89,20 +89,15 @@ const GlobalStyle = createGlobalStyle`
       flex: 1 0 auto;
       display: flex;
       max-width: ${pageFullWidth}px;
-      width: 100%;
+      width: calc(100% - 40px);
       margin: 0 auto;
       padding: 0 20px;
+      margin-bottom: 80px;
 
       & > .content {
-
-        @media (max-width: 1066px) {
-          margin: 0 0 80px 0;
-        }
-        margin: 0 20px 80px 0;
         background: white;
         padding: 40px;
         width: 100%;
-        max-width: 780px;
         box-shadow: 0 0 14px #e0dfdf;
       }
     }

@@ -11,18 +11,16 @@ const StyledNavigation = styled.aside`
   transition: all 0.3s ease;
   margin-left: 0;
   position: relative;
-  height: 1px;
+  margin-right: 20px;
 
   &.open {
     width: 345px;
     left: 207px;
-    margin-right: 160px;
   
     nav.mobile {
       position: fixed;
       top: 159px;
       opacity: 1;
-      margin-right: 68px;
       height: 100vh;
       background: black;
       z-index: 3;
@@ -41,8 +39,6 @@ const StyledNavigation = styled.aside`
   nav {
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
-    margin-bottom: 80px;
     width: 277px;
     box-shadow: 0 0 14px #e0dfdf;
 

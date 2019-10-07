@@ -7,7 +7,7 @@ const StyledHamburger = styled.div`
   height: 48px;
   position: absolute;
   top: 0;
-  right: 20px;
+  right: 0;
   z-index: 3;
   outline: none;
   cursor: pointer;
@@ -33,7 +33,7 @@ const StyledHamburger = styled.div`
   &.open {
     position: fixed;
     top: 159px;
-    left: 257px;
+    left: 275px;
 
     div {
       &:nth-child(1) {
