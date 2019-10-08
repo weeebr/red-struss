@@ -1,18 +1,37 @@
 import React from "react";
 import mitarbeiter from "../../assets/data/mitarbeiter";
 import styled from "styled-components";
-import { typography } from "../../theme/index";
+import { colors } from "../../theme";
 import { getImage } from "./ProfileImages";
 import Image from "../../generic-components/Image";
 
 const StyledTeamMember = styled.div`
-  background: rgb(230, 230, 230);
+  background: linear-gradient(45deg, transparent, rgba(230, 230, 230, 0.8));
   padding: 20px;
   margin-bottom: 40px;
 
   img {
     border-radius: 50%;
     border: 12px solid white;
+    float: left;
+    margin: 0px 30px 20px 10px;
+  }
+
+  h3 {
+    font-size: 22px;
+    color: ${colors.primaryRed};
+  }
+
+  h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  h3,
+  h4 {
+    font-family: OpenSansLight;
+    text-align: center;
   }
 `;
 
@@ -29,13 +48,11 @@ const TeamMember = ({ member }) => {
 
   return (
     <StyledTeamMember>
-      <h3 style={typography.titel}>{name}</h3>
+      <h3>{name}</h3>
       <Image src={getImage(name)} />
+      <h4>{funktion}</h4>
       <p>
         <strong>Teammitglied: seit {seit}</strong>
-      </p>
-      <p>
-        <strong>Funktion: {funktion}</strong>
       </p>
       <p style={{ marginTop: 20 }}>
         <strong>Darum arbeite ich für RED Struss: </strong>

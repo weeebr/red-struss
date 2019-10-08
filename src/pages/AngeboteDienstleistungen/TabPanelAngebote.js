@@ -53,7 +53,7 @@ const StyledAngebote = styled.div`
   h4 {
     font-weight: normal;
     font-family: OpenSans;
-    background: #dedede;
+    background: rgba(60, 60, 60, 0.12);
     padding: 8px 16px;
     margin: 8px 0 8px 0;
     transition: all 0.6s ease;

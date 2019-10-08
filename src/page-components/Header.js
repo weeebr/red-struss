@@ -1,12 +1,11 @@
 import React from "react";
 import logo from "../assets/images/logo.webp";
 import styled from "styled-components";
-import { colors } from "../theme";
 
 const StyledHeader = styled.header`
   display: flex;
   align-items: center;
-  margin: 20px auto 40px auto;
+  margin: 36px auto 40px auto;
 
   @media (min-width: 1280px) {
     width: 1220px;
@@ -25,17 +24,13 @@ const StyledHeader = styled.header`
 
   .title {
     font-size: 32px;
-    font-family: OpenSansBold;
+    font-family: OpenSans;
     text-transform: uppercase;
-    letter-spacing: unset;
-    background: black;
-    color: white;
-    padding: 3px 10px;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, transparent, rgba(210, 210, 210, 0.25));
+    color: black;
+    padding: 9px 16px;
     transition: 0.3s ease;
-
-    &:hover {
-      background: ${colors.primaryAnthracite};
-    }
 
     @media (max-width: 960px) {
       font-size: 24px;
@@ -45,14 +40,18 @@ const StyledHeader = styled.header`
 
 const Logo = styled.div`
   width: 148px;
-  margin-right: 40px;
+  margin-right: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   img {
     width: 100%;
     transition: all 0.3s ease;
+    transform: scale(1.05);
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
   }
 `;

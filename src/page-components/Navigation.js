@@ -8,7 +8,7 @@ import Hamburger from "./Hamburger";
 
 // prettier-ignore
 const StyledNavigation = styled.aside`
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   margin-left: 0;
   position: relative;
   margin-right: 20px;
@@ -19,15 +19,20 @@ const StyledNavigation = styled.aside`
   
     nav.mobile {
       position: fixed;
-      top: 159px;
+      top: 176px;
       opacity: 1;
       height: 100vh;
-      background: black;
+      background: #e8e8e8;
       box-shadow: none;
       z-index: 3;
 
+      a {
+        opacity: 1;
+        margin-left: 0;
+      }
+
       @media (max-width: 960px) {
-        top: 235px;
+        top: 244px;
       }
     }
   }
@@ -35,10 +40,25 @@ const StyledNavigation = styled.aside`
   nav.mobile {
     position: relative;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     box-shadow: none;
     height: 1px;
     margin-left: -229px;
+
+    a {
+      opacity: 0;
+      margin-left: -100px;
+      transition: all 0.5s ease;
+
+      &:nth-child(1) { transition-delay: 0.10s }
+      &:nth-child(2) { transition-delay: 0.15s }
+      &:nth-child(3) { transition-delay: 0.20s }
+      &:nth-child(4) { transition-delay: 0.25s }
+      &:nth-child(5) { transition-delay: 0.30s }
+      &:nth-child(6) { transition-delay: 0.35s }
+      &:nth-child(7) { transition-delay: 0.40s }
+      &:nth-child(8) { transition-delay: 0.45s }
+    }
   } 
 
   nav {
@@ -49,23 +69,26 @@ const StyledNavigation = styled.aside`
 
     a {
       padding: 12px 20px;
-      color: white;
+      color: black;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       text-decoration: none;
       white-space: nowrap;
-      background: black;
-      transition: all 0.3s ease, background-color 0.6s ease;
+      background: #e8e8e8;
+      transition: all 0.5s ease, background 0.1s ease;
 
       &.active {
         font-family: OpenSansBold;
         background: ${colors.primaryRed};
+        color: white;
       }
 
       &:not(:first-child) {
-        border-top: 1px solid #1f1f1f;
+        border-top: 1px solid #d0d0d0;
       }
 
       &:focus,
       &:hover {
+        color: white;
         border-bottom: 0;
         background: ${colors.primaryRed};
         padding: 12px 15px 12px 25px;

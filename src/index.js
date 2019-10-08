@@ -13,41 +13,65 @@ import {
   ReferenzenPartner,
   UnserTeam,
   Wissenswertes,
-  NotFound
+  NotFound,
 } from "./pages";
 import { Helmet } from "react-helmet";
 import GlobalStyle from "./GlobalStyle";
-import styled from "styled-components";
 
 // icon: type/png
 // shortcut icon: ICO
 
-const PagesWrapper = styled.div``;
+const Page = ({ title, ...other }) => {
+  React.useEffect(() => {
+    document.title = "RED Struss - " + title;
+  }, [title]);
+
+  return <Route {...other} />;
+};
 
 const Pages = () => {
   const [isNavigationOpen, setNavigationOpen] = React.useState(false);
   return (
     <>
-      <Header isNavigationOpen={isNavigationOpen} />
+      <Header
+        onClick={console.log.bind(console)}
+        isNavigationOpen={isNavigationOpen}
+      />
       <div>
         <Navigation
           isOpen={isNavigationOpen}
           setNavigationOpen={setNavigationOpen}
         />
 
-        <PagesWrapper className="content" isNavigationOpen={isNavigationOpen}>
+        <div className="content" isNavigationOpen={isNavigationOpen}>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/aktuell" component={Aktuell} />
-            <Route path="/kontakt" component={Kontakt} />
-            <Route path="/angebote/:id?" component={AngeboteDienstleistungen} />
-            <Route path="/leitbild" component={LeitbildPhilosophie} />
-            <Route path="/referenzen" component={ReferenzenPartner} />
-            <Route path="/team" component={UnserTeam} />
-            <Route path="/wissenswertes" component={Wissenswertes} />
-            <Route component={NotFound} />
+            <Page title="Home" exact path="/" component={Home} />
+            <Page title="Aktuell" path="/aktuell" component={Aktuell} />
+            <Page title="Kontakt" path="/kontakt" component={Kontakt} />
+            <Page
+              title="Angebote & Dienstleistungen"
+              path="/angebote/:id?"
+              component={AngeboteDienstleistungen}
+            />
+            <Page
+              title="Leitbild & Philosophie"
+              path="/leitbild"
+              component={LeitbildPhilosophie}
+            />
+            <Page
+              title="Referenzen & Partner"
+              path="/referenzen"
+              component={ReferenzenPartner}
+            />
+            <Page title="UnserTeam" path="/team" component={UnserTeam} />
+            <Page
+              title="Wissenswertes"
+              path="/wissenswertes"
+              component={Wissenswertes}
+            />
+            <Page component={NotFound} />
           </Switch>
-        </PagesWrapper>
+        </div>
       </div>
     </>
   );

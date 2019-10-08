@@ -36,6 +36,10 @@ const GlobalStyle = createGlobalStyle`
     src: url(${OpenSans}) format('truetype');
   }
 
+  *::before, *::after, * {
+    box-sizing: border-box;
+  }
+
   html, body,  p {
     margin: 0;
     padding: 0;
@@ -100,9 +104,8 @@ const GlobalStyle = createGlobalStyle`
       & > .content {
         background: white;
         padding: 40px;
-        width: 100%;
+        width: 992px;
         box-shadow: 0 0 14px #e0dfdf;
-        max-width: 842px;
 
         @media (max-width: 1048px) {
           width: calc(100% - 148px); 

@@ -17,12 +17,48 @@ export const colors = {
 export const device = {
   mobile: "767px",
   tablet: "991px",
+  sm: "600px",
+  md: "960px",
+  lg: "1280px",
+  xl: "1920px",
 };
 
-export const breakpoints = {
-  mobile: `@media (max-width:${device.mobile})`,
-  tablet: `@media (max-width:${device.tablet})`,
+export const muiFontRecommendations = {
+  sm: {
+    h1: "56px",
+    h2: "38px",
+    h3: "32px",
+    h4: "25px",
+    h5: "20px",
+    h6: "18px",
+  },
+  md: {
+    h1: "76px",
+    h2: "48px",
+    h3: "38px",
+    h4: "31px",
+    h5: "21px",
+    h6: "20px",
+  },
+  lg: {
+    h1: "88px",
+    h2: "56px",
+    h3: "42px",
+    h4: "31px",
+    h5: "24px",
+    h6: "20px",
+  },
+  xl: {
+    h1: "96px",
+    h2: "60px",
+    h3: "46px",
+    h4: "34px",
+    h5: "24px",
+    h6: "20px",
+  },
 };
+
+export const breakpoint = device => `@media (max-width:${device.mobile})`;
 
 export const icons = {
   vertrauen: vertrauenIcon,
@@ -88,6 +124,11 @@ export const getString = stylings => {
   }
 
   return result;
+};
+
+export const zIndex = {
+  overContent: 2,
+  overNavOverlay: 3,
 };
 
 export const pageFullWidth = 297 + 922; // nav + content

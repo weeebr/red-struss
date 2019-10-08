@@ -42,7 +42,7 @@ const StyledAngebot = styled.a`
 
      p {
       padding-left: 10px;
-      /*background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), ${colors.primaryRed}*/
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), ${colors.primaryRed};
     }
   }
 

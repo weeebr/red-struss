@@ -6,8 +6,12 @@ import Image from "./../generic-components/Image";
 import bgImage from "../assets/images/bg-dark.jpg";
 
 const StyledFooter = styled.footer`
-  background: linear-gradient(10deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8)),
-    url(${bgImage});
+  background: linear-gradient(
+      -10deg,
+      rgba(80, 80, 80, 0.7),
+      rgba(40, 40, 40, 0.7)
+    ),
+    linear-gradient(0, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url(${bgImage});
   color: white;
   padding-bottom: 120px;
 
@@ -25,8 +29,6 @@ const StyledFooter = styled.footer`
 
   .wieso-wir {
     padding: 60px 20px 60px 40px;
-    background: #020202;
-    box-shadow: 0 4px 8px 5px black;
 
     .footer-cards {
       display: flex;

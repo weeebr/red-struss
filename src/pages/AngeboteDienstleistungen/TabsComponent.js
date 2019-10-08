@@ -17,7 +17,7 @@ function a11yProps(index) {
 }
 
 const StyledTabs = styled.div`
-  margin-top: 40px;
+  margin-top: 10px;
 
   .MuiAppBar-root {
     box-shadow: none;
@@ -30,11 +30,15 @@ const StyledTabs = styled.div`
       }
 
       .MuiTab-root {
+        transition: background 0.7s ease, color 0.5s ease;
+        background: white;
+
         &.Mui-selected,
         &:focus,
         &:hover {
           color: ${colors.primaryRed};
           font-weight: bold;
+          background: rgba(60, 60, 60, 0.12);
         }
       }
     }
