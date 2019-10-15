@@ -27,7 +27,7 @@ const StyledAngebot = styled.a`
   box-shadow: 0 0 2px 0px #d2d2d2, 0 0 4px 2px #d2d2d2;
   margin-bottom: 20px;
   padding: 10px;
-  width: 180px;
+  width: 200px;
   margin-left: 10px;
   margin-right: 10px;
 
@@ -42,7 +42,7 @@ const StyledAngebot = styled.a`
 
      p {
       padding-left: 10px;
-      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), ${colors.primaryRed};
+      /*background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), ${colors.primaryRed};*/
     }
   }
 
@@ -56,6 +56,7 @@ const StyledAngebot = styled.a`
     background: ${colors.primaryRed};
     padding: 8px;
     color: white;
+    margin-top: -6px;
     }
   }
 `;

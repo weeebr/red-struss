@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
   html, body,  p {
     margin: 0;
     padding: 0;
-    font-family: "Helvetica", "Arial", sans-serif;
+    font-family: OpenSans;
     line-height: 1.5;
     letter-spacing: 0.01038em;
   }
@@ -56,7 +56,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     
     line-height: 1.5;
-    font-family: "OpenSans";
+    font-family: OpenSans;
+    text-rendering: optimizeSpeed;
   }
 
   h1 {

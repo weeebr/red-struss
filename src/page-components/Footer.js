@@ -95,7 +95,7 @@ const Footer = () => {
       <div className="contact">
         <h2>Kontakt</h2>
         <p>
-          <strong>Recycling und Eventdienstleistungen Struss</strong>
+          <strong>Recycling- und Eventdienstleistungen Struss</strong>
         </p>
         <p>
           Gundeldingerrain 10, 4053 Basel &nbsp;|&nbsp;
@@ -104,7 +104,7 @@ const Footer = () => {
             077 447 87 65
           </a>
           &nbsp;|&nbsp;
-          <a href="mailto:info@red-struss.com">
+          <a target="_blank" href="mailto:info@red-struss.com">
             <Image src={icons.email} />
             info@red-struss.com
           </a>

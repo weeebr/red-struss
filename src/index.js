@@ -31,6 +31,7 @@ const Page = ({ title, ...other }) => {
 
 const Pages = () => {
   const [isNavigationOpen, setNavigationOpen] = React.useState(false);
+
   return (
     <>
       <Header
@@ -45,7 +46,8 @@ const Pages = () => {
 
         <div className="content" isNavigationOpen={isNavigationOpen}>
           <Switch>
-            <Page title="Home" exact path="/" component={Home} />
+            <Page key={0} title="Home" exact path="/" component={Home} />
+
             <Page title="Aktuell" path="/aktuell" component={Aktuell} />
             <Page title="Kontakt" path="/kontakt" component={Kontakt} />
             <Page

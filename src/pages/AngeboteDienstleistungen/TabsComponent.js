@@ -32,12 +32,13 @@ const StyledTabs = styled.div`
       .MuiTab-root {
         transition: background 0.7s ease, color 0.5s ease;
         background: white;
+        font-family: OpenSans;
 
         &.Mui-selected,
         &:focus,
         &:hover {
           color: ${colors.primaryRed};
-          font-weight: bold;
+          font-family: OpenSansBold;
           background: rgba(60, 60, 60, 0.12);
         }
       }

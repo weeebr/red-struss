@@ -70,7 +70,7 @@ const StyledNavigation = styled.aside`
     a {
       padding: 12px 20px;
       color: black;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: OpenSans;
       text-decoration: none;
       white-space: nowrap;
       background: #e8e8e8;

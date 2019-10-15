@@ -12,6 +12,22 @@ const Accordeon = styled.div`
     margin-top: -4px;
     margin-left: -24px;
 
+    .MuiCollapse-container[style] {
+      min-height: 200px !important;
+      visibility: visible;
+      position: relative;
+
+      button {
+        position: absolute;
+        top: 80px;
+
+        padding: 4px 8px;
+        background: ${colors.primaryRed};
+        color: white;
+        font-family: OpenSans;
+      }
+    }
+
     & > div {
       box-shadow: none;
     }
@@ -23,6 +39,10 @@ const Accordeon = styled.div`
         color: ${colors.primaryRed};
       }
     }
+
+    .MuiExpansionPanelDetails-root {
+      flex-direction: column;
+    }
   }
 `;
 
@@ -33,7 +53,7 @@ export const LeitbildPhilosophie = () => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  React.useEffect(() => setExpanded("panel0"), []);
+  //React.useEffect(() => setExpanded("panel0"), []);
 
   const data = [
     {
@@ -100,12 +120,11 @@ export const LeitbildPhilosophie = () => {
                 {d.subtitle}
               </p>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                {d.text.map(t => (
-                  <span key={t}>{t}</span>
-                ))}
-              </Typography>
+            <ExpansionPanelDetails className="">
+              {d.text.map(t => (
+                <p key={t} dangerouslySetInnerHTML={{ __html: t }} />
+              ))}
+              <button>Mehr lesen...</button>
             </ExpansionPanelDetails>
           </ExpansionPanel>
         </>

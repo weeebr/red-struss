@@ -14,6 +14,10 @@ const StyledEvents = styled.div`
   .intro {
     margin-bottom: 60px;
   }
+
+  h3 {
+    margin-top: 40px;
+  }
 `;
 
 const events = [
