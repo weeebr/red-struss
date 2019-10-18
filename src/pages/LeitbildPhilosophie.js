@@ -2,7 +2,6 @@ import React from "react";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import styled from "styled-components";
 import { typography, colors } from "./../theme";
@@ -17,14 +16,20 @@ const Accordeon = styled.div`
       visibility: visible;
       position: relative;
 
-      button {
+      .read-more {
+        display: flex;
+        width: 888px;
+        justify-content: center;
         position: absolute;
-        top: 80px;
+        bottom: 20px;
+        z-index: 2;
 
-        padding: 4px 8px;
-        background: ${colors.primaryRed};
-        color: white;
-        font-family: OpenSans;
+        button {
+          padding: 4px 8px;
+          background: ${colors.primaryRed};
+          color: white;
+          font-family: OpenSans;
+        }
       }
     }
 
@@ -42,6 +47,25 @@ const Accordeon = styled.div`
 
     .MuiExpansionPanelDetails-root {
       flex-direction: column;
+    }
+
+    .MuiCollapse-container {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -15px;
+        right: -15px;
+        box-shadow: inset 0 -165px 79px -51px white;
+      }
+
+      &.MuiCollapse-entered {
+        &::after,
+        button {
+          visibility: hidden;
+        }
+      }
     }
   }
 `;
@@ -87,6 +111,8 @@ export const LeitbildPhilosophie = () => {
     },
   ];
 
+  const handleClick = idx => setExpanded(`panel${idx}`);
+
   return (
     <Accordeon>
       {data.map((d, idx) => (
@@ -124,7 +150,9 @@ export const LeitbildPhilosophie = () => {
               {d.text.map(t => (
                 <p key={t} dangerouslySetInnerHTML={{ __html: t }} />
               ))}
-              <button>Mehr lesen...</button>
+              <div className="read-more">
+                <button onClick={() => handleClick(idx)}>Mehr lesen...</button>
+              </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
         </>

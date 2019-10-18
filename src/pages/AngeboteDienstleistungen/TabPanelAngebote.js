@@ -8,7 +8,6 @@ import basicImage from "../../assets/images/angebote/Basic.webp";
 import eventImage from "../../assets/images/angebote/Event.webp";
 import apcImage from "../../assets/images/angebote/APC.webp";
 import Image from "../../generic-components/Image";
-import LogProps from "../../utils";
 
 const StyledAngebote = styled.div`
   margin-bottom: 80px;

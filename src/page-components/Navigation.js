@@ -66,7 +66,7 @@ const StyledNavigation = styled.aside`
     flex-direction: column;
     width: 277px;
     box-shadow: 0 0 14px #e0dfdf;
-
+    
     a {
       padding: 12px 20px;
       color: black;
@@ -75,6 +75,7 @@ const StyledNavigation = styled.aside`
       white-space: nowrap;
       background: #e8e8e8;
       transition: all 0.5s ease, background 0.1s ease;
+      border-bottom: 1px solid #d0d0d0;
 
       &.active {
         font-family: OpenSansBold;
@@ -82,9 +83,6 @@ const StyledNavigation = styled.aside`
         color: white;
       }
 
-      &:not(:first-child) {
-        border-top: 1px solid #d0d0d0;
-      }
 
       &:focus,
       &:hover {
@@ -98,7 +96,9 @@ const StyledNavigation = styled.aside`
 `;
 
 const Navigation = ({ isOpen, setNavigationOpen }) => {
-  const hamburgerVisible = useMediaQuery(`(max-width:${pageFullWidth + 60}px)`);
+  const hamburgerVisible = useMediaQuery(
+    `(max-width:${pageFullWidth + 130}px)`
+  );
 
   return (
     <StyledNavigation className={isOpen ? "open" : null} isOpen={isOpen}>

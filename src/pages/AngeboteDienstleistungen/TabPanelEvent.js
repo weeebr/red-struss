@@ -1,37 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const Event = ({ title, description }) => {
-  return (
-    <>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </>
-  );
-};
-
 const StyledEvents = styled.div`
   .intro {
     margin-bottom: 60px;
   }
-
-  h3 {
-    margin-top: 40px;
-  }
 `;
-
-const events = [
-  {
-    title: "Eindrücke von den Bieler Lauftagen 2019",
-    description:
-      "Bereits zum 60sten Mal haben 2019 die Bieler Lauftage mit dem legendären 100 km-Lauf stattgefunden. RED Struss hat dabei zum ersten Mal das Abfall- und Recyclingmanagement für das Start- und Zielgelände übernommen und dort bewiesen, dass eine Trennquote von 100 % nebst einem Platz, von dessen Boden man essen könnte, machbar ist. Zusätzlich konnten wir die Menge des Restmülls gegenüber dem Vorjahr um 57 % reduzieren.",
-  },
-  {
-    title: "Eindrücke vom World Food Festival 2018",
-    description:
-      "Das WFF ist mit jährlich bis zu 24 verschiedenen Veranstaltungsorten eines der grössten Streetfood-Festivals in der Schweiz. Für diesen Kunden haben wir ein umfassendes Dienstleistungspaket wahrgenommen, vom Auf- und Abbau über den technischen Support während den Veranstaltungen bis hin zur Sauberkeit und Mülltrennung.",
-  },
-];
 
 export default () => {
   return (
@@ -68,11 +42,6 @@ export default () => {
           Kennenlernen.
         </p>
       </div>
-      <>
-        {events.map(e => (
-          <Event key={e.title} title={e.title} description={e.description} />
-        ))}
-      </>
     </StyledEvents>
   );
 };

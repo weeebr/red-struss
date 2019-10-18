@@ -44,7 +44,7 @@ const Pages = () => {
           setNavigationOpen={setNavigationOpen}
         />
 
-        <div className="content" isNavigationOpen={isNavigationOpen}>
+        <div className="content">
           <Switch>
             <Page key={0} title="Home" exact path="/" component={Home} />
 

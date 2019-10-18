@@ -104,7 +104,11 @@ const Footer = () => {
             077 447 87 65
           </a>
           &nbsp;|&nbsp;
-          <a target="_blank" href="mailto:info@red-struss.com">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:info@red-struss.com"
+          >
             <Image src={icons.email} />
             info@red-struss.com
           </a>
