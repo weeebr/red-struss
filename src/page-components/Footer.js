@@ -136,6 +136,7 @@ const Card = styled.div`
   h3 {
     color: ${colors.primaryRed};
     margin-bottom: 10px;
+    font-weight: normal;
   }
 
   p {
