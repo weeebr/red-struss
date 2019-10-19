@@ -90,11 +90,11 @@ const StyledAngebote = styled.div`
     .price {
       background-color: ${colors.primaryRed};
       position: absolute;
-      left: 20px;
-      top: 210px;
-      max-width: 130px;
+      left: 40px;
+      top: 270px;
+      max-width: 150px;
       text-align: center;
-      font-size: 14px;
+      font-size: 13px;
       padding: 8px 16px;
       color: white;
       transform: rotate(-6deg);

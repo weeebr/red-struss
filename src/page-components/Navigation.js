@@ -49,7 +49,7 @@ const StyledNavigation = styled.aside`
       opacity: 0;
       margin-left: -100px;
       transition: all 0.5s ease;
-
+      /*
       &:nth-child(1) { transition-delay: 0.10s }
       &:nth-child(2) { transition-delay: 0.15s }
       &:nth-child(3) { transition-delay: 0.20s }
@@ -57,7 +57,7 @@ const StyledNavigation = styled.aside`
       &:nth-child(5) { transition-delay: 0.30s }
       &:nth-child(6) { transition-delay: 0.35s }
       &:nth-child(7) { transition-delay: 0.40s }
-      &:nth-child(8) { transition-delay: 0.45s }
+      &:nth-child(8) { transition-delay: 0.45s }*/
     }
   } 
 
@@ -87,7 +87,7 @@ const StyledNavigation = styled.aside`
       &:focus,
       &:hover {
         color: white;
-        border-bottom: 0;
+        border-bottom: 1px solid ${colors.primaryRed};
         background: ${colors.primaryRed};
         padding: 12px 15px 12px 25px;
       }
