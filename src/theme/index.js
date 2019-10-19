@@ -1,7 +1,7 @@
-import vertrauenIcon from "../assets/images/footer/icon-vertrauen.webp";
-import bezahlungIcon from "../assets/images/footer/icon-bezahlung.webp";
-import wertschaetzungIcon from "../assets/images/footer/icon-wertschaetzung.webp";
-import umweltschutzIcon from "../assets/images/footer/icon-umweltschutz.webp";
+import aufrichtigIcon from "../assets/images/footer/icon-aufrichtig.svg";
+import fairIcon from "../assets/images/footer/icon-fair.svg";
+import gemeinsamIcon from "../assets/images/footer/icon-gemeinsam.svg";
+import wertschaetzungIcon from "../assets/images/footer/icon-wertschaetzung.svg";
 import favIcon from "../assets/images/favicon.jpg";
 import phoneIcon from "../assets/images/footer/phone.svg";
 import emailIcon from "../assets/images/footer/email.svg";
@@ -61,10 +61,10 @@ export const muiFontRecommendations = {
 export const breakpoint = device => `@media (max-width:${device.mobile})`;
 
 export const icons = {
-  vertrauen: vertrauenIcon,
-  bezahlung: bezahlungIcon,
+  aufrichtig: aufrichtigIcon,
+  fair: fairIcon,
+  gemeinsam: gemeinsamIcon,
   wertschaetzung: wertschaetzungIcon,
-  umweltschutz: umweltschutzIcon,
   favicon: favIcon,
   phone: phoneIcon,
   email: emailIcon,
