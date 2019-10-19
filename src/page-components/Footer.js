@@ -21,6 +21,7 @@ const StyledFooter = styled.footer`
     margin-bottom: 40px;
     letter-spacing: 2px;
     transition: all 0.6s ease;
+    font-weight: normal;
 
     &:hover {
       color: ${colors.primaryRed};
@@ -53,6 +54,10 @@ const StyledFooter = styled.footer`
 
     p {
       margin: 0 0 15px 0;
+
+      &.company {
+        font-family: OpenSansBold;
+      }
 
       img {
         position: relative;
@@ -94,9 +99,7 @@ const Footer = () => {
       </div>
       <div className="contact">
         <h2>Kontakt</h2>
-        <p>
-          <strong>Recycling- und Eventdienstleistungen Struss</strong>
-        </p>
+        <p className="company">Recycling- und Eventdienstleistungen Struss</p>
         <p>
           Gundeldingerrain 10, 4053 Basel &nbsp;|&nbsp;
           <a href="tel:+41774478765">
