@@ -71,7 +71,7 @@ const StyledAngebote = styled.div`
       display: flex;
 
       img {
-        width: 168px;
+        min-width: 168px;
         height: 168px;
         margin: 30px;
       }

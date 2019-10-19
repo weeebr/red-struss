@@ -97,7 +97,7 @@ const GlobalStyle = createGlobalStyle`
       padding: 0 20px;
       margin-bottom: 80px;
 
-      @media (max-width: 1130px) {
+      @media (max-width: 1148px) {
         margin: 0 20px 80px 20px;
         padding: 0;
       }
@@ -108,8 +108,8 @@ const GlobalStyle = createGlobalStyle`
         width: 992px;
         box-shadow: 0 0 14px #e0dfdf;
 
-        @media (max-width: 1130px) {
-          width: calc(100% - 68px); 
+        @media (max-width: 1148px) {
+          width: calc(100% - 68px);
         }
       }
     }
