@@ -1,86 +1,70 @@
 import React from "react";
-import mitarbeiter from "../../assets/data/mitarbeiter";
+import { Carousel } from "react-responsive-carousel";
 import styled from "styled-components";
 import { colors } from "../../theme";
-import { getImage } from "./ProfileImages";
-import Image from "../../generic-components/Image";
+import mitarbeiter from "../../assets/data/mitarbeiter";
+import SlideItem from "./SlideItem";
 
-const StyledTeamMember = styled.div`
-  background: linear-gradient(45deg, transparent, rgba(230, 230, 230, 0.8));
-  padding: 20px;
-  margin-bottom: 40px;
+const StyledCarousel = styled(Carousel)`
+  .carousel {
+    display: flex;
+    .slide {
+      background: transparent;
+      height: 100%;
 
-  img {
-    border-radius: 50%;
-    border: 12px solid white;
-    float: left;
-    margin: 0px 30px 20px 10px;
+      &:not(.selected) {
+        height: 0;
+      }
+    }
   }
 
-  h3 {
-    font-size: 22px;
-    color: ${colors.primaryRed};
-  }
+  && .control-dots {
+    padding: 0;
+    display: inline-flex;
+    margin: 0;
+    position: static;
+    width: 305px;
+    position: absolute;
+    right: -120px;
+    transform: rotate(90deg);
+    top: 280px;
+    bottom: unset;
 
-  h4 {
-    font-size: 16px;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-  }
-
-  h3,
-  h4 {
-    font-family: OpenSansLight;
-    text-align: center;
+    .dot {
+      background: ${colors.primaryRed};
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      box-shadow: none;
+      width: 14px;
+      height: 14px;
+      margin: 0 12px;
+    }
   }
 `;
 
-const TeamMember = ({ member }) => {
-  const {
-    name,
-    seit,
-    funktion,
-    motivation,
-    umweltschutz,
-    recycling,
-    einzigartig,
-  } = member;
-
-  return (
-    <StyledTeamMember>
-      <h3>{name}</h3>
-      <Image src={getImage(name)} />
-      <h4>{funktion}</h4>
-      <p>
-        <strong>Teammitglied: seit {seit}</strong>
-      </p>
-      <p style={{ marginTop: 20 }}>
-        <strong>Darum arbeite ich für RED Struss: </strong>
-        {motivation}
-      </p>
-      <p>
-        <strong>Mein Bezug zum Thema Umweltschutz: </strong>
-        {umweltschutz}
-      </p>
-      <p>
-        <strong>So weit gehe ich beim Recycling: </strong>
-        {recycling}
-      </p>
-      <p>
-        <strong>Das macht mich einzigartig: </strong>
-        {einzigartig}
-      </p>
-    </StyledTeamMember>
-  );
-};
-
 const UnserTeam = () => {
+  const shuffleArray = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+
+    return array;
+  };
+
   return (
     <>
       <h1>Unser Team</h1>
-      {mitarbeiter.map((m, idx) => (
-        <TeamMember key={idx} member={m} />
-      ))}
+      <StyledCarousel
+        showArrows={false}
+        showIndicators
+        showStatus={false}
+        showThumbs={false}
+        stopOnHover
+      >
+        {shuffleArray(mitarbeiter).map(m => (
+          <SlideItem key={m} member={m} />
+        ))}
+      </StyledCarousel>
     </>
   );
 };

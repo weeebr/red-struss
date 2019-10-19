@@ -4,7 +4,6 @@ import OpenSansBold from "./assets/fonts/OpenSans-Bold.ttf";
 import OpenSansItalic from "./assets/fonts/OpenSans-Italic.ttf";
 import OpenSansLight from "./assets/fonts/OpenSans-Light.ttf";
 import OpenSans from "./assets/fonts/OpenSans-Regular.ttf";
-
 import { colors, typography, getString } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
@@ -107,6 +106,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 40px;
         width: 992px;
         box-shadow: 0 0 14px #e0dfdf;
+        min-height: 400px;
 
         @media (max-width: 1148px) {
           width: calc(100% - 68px);
