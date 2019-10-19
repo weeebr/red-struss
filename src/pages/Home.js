@@ -5,10 +5,22 @@ import eventVeranstalterImage from "../assets/images/home/event-veranstalter.web
 import Image from "./../generic-components/Image";
 import styled from "styled-components";
 import { colors } from "./../theme";
+import { Carousel } from "react-responsive-carousel";
+import galleryImg1 from "../assets/images/home/gallery/1.webp";
+import galleryImg2 from "../assets/images/home/gallery/2.webp";
+import galleryImg3 from "../assets/images/home/gallery/3.webp";
+import galleryImg4 from "../assets/images/home/gallery/4.webp";
+import galleryImg5 from "../assets/images/home/gallery/5.webp";
+import { getAltText } from "./../generic-components/Image";
 
 const StyledHome = styled.div`
   & > p {
     margin-bottom: 40px;
+  }
+
+  .carousel .thumbs {
+    display: flex;
+    justify-content: center;
   }
 
   .angebote {
@@ -80,9 +92,24 @@ const Angebot = ({ id, img, text }) => {
 };
 
 const Home = () => {
+  const galleryImages = [
+    galleryImg1,
+    galleryImg2,
+    galleryImg3,
+    galleryImg4,
+    galleryImg5,
+  ];
+
+  console.log(galleryImages);
+
   return (
     <StyledHome>
       <h1>Home</h1>
+      <Carousel>
+        {galleryImages.map(i => (
+          <img key={i} src={i} alt={getAltText(i)} />
+        ))}
+      </Carousel>
       <p>Entdecken Sie die passende Dienstleistung für Sie als ...</p>
       <div className="angebote">
         <Angebot id={0} img={unternehmenImage} text="Unternehmen" />
