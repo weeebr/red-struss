@@ -116,7 +116,7 @@ const Home = () => {
   return (
     <StyledHome>
       <h1>Home</h1>
-      <Carousel>
+      <Carousel showStatus={false}>
         {galleryImages.map(i => (
           <img key={i} src={i} alt={getAltText(i)} />
         ))}
