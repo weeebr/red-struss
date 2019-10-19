@@ -46,13 +46,13 @@ const StyledTabs = styled.div`
 
     .MuiTabs-indicator {
       &[style] {
-        left: calc(33% * ${props => props.value}) !important;
-        width: 33% !important;
+        left: calc(33.3% * ${props => props.value}) !important;
+        width: 33.3% !important;
 
         @media (max-width: 768px) {
           width: 100% !important;
           left: 0 !important;
-          top: calc(33% * ${props => props.value} + 48px) !important;
+          top: calc(33.33% * ${props => props.value} + 47px) !important;
         }
       }
       background-color: ${colors.primaryRed};
@@ -60,6 +60,18 @@ const StyledTabs = styled.div`
   }
   .MuiBox-root {
     padding: 24px 0 0 0;
+  }
+
+  .react-swipeable-view-container {
+    background: white;
+
+    & > div[aria-hidden="false"] {
+      height: 100%;
+    }
+
+    & > div[aria-hidden="true"] {
+      height: 0;
+    }
   }
 `;
 
