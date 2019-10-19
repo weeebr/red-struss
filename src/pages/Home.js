@@ -18,9 +18,20 @@ const StyledHome = styled.div`
     margin-bottom: 40px;
   }
 
-  .carousel .thumbs {
-    display: flex;
-    justify-content: center;
+  .carousel {
+    .thumbs {
+      display: flex;
+      justify-content: center;
+    }
+
+    .control-dots .dot {
+      background: ${colors.primaryRed};
+      width: 14px;
+      height: 14px;
+      margin: 0 12px;
+      background: red;
+      box-shadow: 0 0 0 3px white;
+    }
   }
 
   .angebote {

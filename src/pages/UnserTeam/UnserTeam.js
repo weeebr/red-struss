@@ -32,11 +32,11 @@ const StyledCarousel = styled(Carousel)`
 
     .dot {
       background: ${colors.primaryRed};
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      box-shadow: none;
       width: 14px;
       height: 14px;
       margin: 0 12px;
+      background: red;
+      box-shadow: 0 0 0 3px white;
     }
   }
 `;
