@@ -29,9 +29,9 @@ const Event = ({ title, description }) => {
       <p>{description}</p>
       <h4>Eindrücke</h4>
       <div className="images-gallery">
-        <img src="#" />
-        <img src="#" />
-        <img src="#" />
+        <img src="#" alt="" />
+        <img src="#" alt="" />
+        <img src="#" alt="" />
       </div>
     </>
   );

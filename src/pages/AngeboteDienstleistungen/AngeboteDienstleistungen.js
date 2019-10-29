@@ -1,12 +1,16 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { useParams, useHistory, useLocation } from "react-router-dom";
 import TabsComponent from "./TabsComponent";
 
-const AngeboteDienstleistungen = ({ match, history }) => {
-  const { params } = match;
+const AngeboteDienstleistungen = () => {
+  const params = useParams();
+  const location = useLocation();
+  const history = useHistory();
 
   const onTabClick = id =>
-    history.push(match.path.substr(0, match.path.indexOf(":")) + id);
+    history.push(
+      location.pathname.substr(0, location.pathname.indexOf(":")) + id
+    );
 
   return (
     <>
@@ -16,4 +20,4 @@ const AngeboteDienstleistungen = ({ match, history }) => {
   );
 };
 
-export default withRouter(AngeboteDienstleistungen);
+export default AngeboteDienstleistungen;

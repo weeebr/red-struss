@@ -63,6 +63,7 @@ const StyledFooter = styled.footer`
         position: relative;
         top: 5px;
         margin: 0 4px;
+        display: inline;
       }
     }
   }

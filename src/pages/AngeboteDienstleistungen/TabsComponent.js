@@ -76,7 +76,7 @@ const StyledTabs = styled.div`
 `;
 
 export default ({ current, onTabClick }) => {
-  const [value, setValue] = React.useState(parseInt(current) || 0);
+  const [value, setValue] = React.useState(+current || 0);
 
   const handleChange = (event, index) => {
     setValue(index);

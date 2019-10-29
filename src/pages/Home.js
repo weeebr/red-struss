@@ -22,6 +22,10 @@ const StyledHome = styled.div`
     .thumbs {
       display: flex;
       justify-content: center;
+
+      & > * {
+        cursor: pointer;
+      }
     }
 
     .control-dots .dot {
@@ -72,6 +76,7 @@ const StyledAngebot = styled.a`
   img {
     transform: scale(0.7) translateX(-20px);
     transition: all 0.5s ease;
+    max-width: unset;
   }
 
   p {
@@ -79,8 +84,7 @@ const StyledAngebot = styled.a`
     background: ${colors.primaryRed};
     padding: 8px;
     color: white;
-    margin-top: -6px;
-    }
+    margin-top: 0;
   }
 `;
 

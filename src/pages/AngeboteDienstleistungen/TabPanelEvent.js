@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import conceptPDF from "../../assets/RED-Struss-Konzept.pdf";
 
 const StyledEvents = styled.div`
   .intro {
@@ -34,11 +35,14 @@ export default () => {
           enttäuscht.
         </p>
         <p>
-          Unser generelles Konzept mit näheren Informationen finden Sie{" "}
-          <a href="/">hier</a> zum Download.
+          Unser generelles Konzept mit näheren Informationen finden Sie&nbsp;
+          <a href={conceptPDF} download="RED-Struss-Konzept">
+            hier
+          </a>
+          &nbsp;zum Download.
         </p>
         <p>
-          <a href="/contact">Kontaktieren Sie uns</a> für ein unverbindliches
+          <a href="/kontakt">Kontaktieren Sie uns</a> für ein unverbindliches
           Kennenlernen.
         </p>
       </div>

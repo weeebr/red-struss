@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "../../theme";
-
-import mitarbeiter from "../../assets/data/mitarbeiter";
 import { getImage } from "./ProfileImages";
 import Image from "../../generic-components/Image";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
