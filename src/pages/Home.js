@@ -128,7 +128,7 @@ const Home = () => {
       <p>Entdecken Sie die passende Dienstleistung für Sie als ...</p>
       <div className="angebote">
         <Angebot id={0} img={unternehmenImage} text="Unternehmen" />
-        <Angebot id={1} img={privaterHaushaltImage} text="privaten Haushalt" />
+        <Angebot id={1} img={privaterHaushaltImage} text="privater Haushalt" />
         <Angebot
           id={2}
           img={eventVeranstalterImage}
