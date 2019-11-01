@@ -100,7 +100,7 @@ export default ({ current, onTabClick }) => {
           aria-hidden="false"
         >
           <Tab label="Unternehmen" {...a11yProps(0)} />
-          <Tab label="Privater Haushalt" {...a11yProps(1)} />
+          <Tab label="Privathaushalte" {...a11yProps(1)} />
           <Tab label="Event-Veranstalter" {...a11yProps(2)} />
         </Tabs>
       </AppBar>

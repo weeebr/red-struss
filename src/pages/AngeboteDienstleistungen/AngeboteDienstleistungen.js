@@ -9,7 +9,8 @@ const AngeboteDienstleistungen = () => {
 
   const onTabClick = id =>
     history.push(
-      location.pathname.substr(0, location.pathname.indexOf(":")) + id
+      location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1) +
+        id
     );
 
   return (

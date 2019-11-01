@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const events = [
   {
-    title: "Bieler Lauftagen 2019",
+    title: "Bieler Lauftage 2019",
     description:
       "Bereits zum 60sten Mal haben 2019 die Bieler Lauftage mit dem legendären 100 km-Lauf stattgefunden. RED Struss hat dabei zum ersten Mal das Abfall- und Recyclingmanagement für das Start- und Zielgelände übernommen und dort bewiesen, dass eine Trennquote von 100 % nebst einem Platz, von dessen Boden man essen könnte, machbar ist. Zusätzlich konnten wir die Menge des Restmülls gegenüber dem Vorjahr um 57 % reduzieren.",
   },
@@ -12,6 +12,10 @@ const events = [
     description:
       "Das WFF ist mit jährlich bis zu 24 verschiedenen Veranstaltungsorten eines der grössten Streetfood-Festivals in der Schweiz. Für diesen Kunden haben wir ein umfassendes Dienstleistungspaket wahrgenommen, vom Auf- und Abbau über den technischen Support während den Veranstaltungen bis hin zur Sauberkeit und Mülltrennung.",
   },
+  {
+    title: "Basler Herbstmesse 2019",
+    description: "Mit rund 1 Million Besuchenden zählt die Herbstmesse zu den grössten Veranstaltungen in der Nordwestschweiz. Obwohl die Stadt Basel sehr erfahren in der Beseitigung solcher enormer Abfallmengen ist, so wurde die Trennung bisher leider nirgends berücksichtigt. Die Organisatoren wollten dies 2019 ändern und lancierten einen Pilotversuch auf dem Kasernenareal mit Trenninseln. Gemeinsam mit unserem Partner Schwendimann AG haben wir diesen Versuch ausgeführt, begleitet und ausgewertet."
+  }
 ];
 
 const StyledReferenzen = styled.div`
