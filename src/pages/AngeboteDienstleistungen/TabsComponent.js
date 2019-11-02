@@ -23,23 +23,21 @@ const StyledTabs = styled.div`
     box-shadow: none;
 
     .MuiTabs-flexContainer {
-      background: white;
-
       @media (max-width: 768px) {
         flex-direction: column;
       }
 
       .MuiTab-root {
         transition: background 0.7s ease, color 0.5s ease;
-        background: white;
+        background: rgba(231, 21, 0, 0.45);
         font-family: OpenSans;
+        color: white;
 
         &.Mui-selected,
         &:focus,
         &:hover {
-          color: ${colors.primaryRed};
+          background: ${colors.primaryRed};
           font-family: OpenSansBold;
-          background: rgba(60, 60, 60, 0.12);
         }
       }
     }
