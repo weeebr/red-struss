@@ -4,7 +4,7 @@ import OpenSansBold from "./assets/fonts/OpenSans-Bold.ttf";
 import OpenSansItalic from "./assets/fonts/OpenSans-Italic.ttf";
 import OpenSansLight from "./assets/fonts/OpenSans-Light.ttf";
 import OpenSans from "./assets/fonts/OpenSans-Regular.ttf";
-import { colors, typography, getString } from "./theme";
+import { colors, typography, getString, breakpoint, device } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -45,6 +45,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: OpenSans;
     line-height: 1.5;
     letter-spacing: 0.01038em;
+
+    ${breakpoint(device.phone)} {
+      font-size: 14px;
+    }
   }
 
   body,
@@ -141,6 +145,10 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
       }
 
+      ${breakpoint(device.phone)} {
+        margin: 0 3% 80px 3%;
+      }
+
       & > .content {
         background: white;
         padding: 40px;
@@ -150,6 +158,11 @@ const GlobalStyle = createGlobalStyle`
 
         @media (max-width: 1148px) {
           width: calc(100% - 68px);
+        }
+
+        ${breakpoint(device.phone)} {
+          padding: 4%;
+          width: 100%;
         }
       }
     }

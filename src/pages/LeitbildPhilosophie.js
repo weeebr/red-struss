@@ -4,12 +4,16 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import styled from "styled-components";
-import { typography, colors } from "./../theme";
+import { typography, colors, device, breakpoint } from "./../theme";
 
 const Accordeon = styled.div`
   &&&& {
     margin-top: -4px;
     margin-left: -24px;
+
+    ${breakpoint(device.phone)} {
+      margin-top: 0;
+    }
 
     .MuiExpansionPanel-root:before {
       content: unset;
@@ -22,6 +26,20 @@ const Accordeon = styled.div`
         transparent,
         rgba(210, 210, 210, 0.35)
       );
+
+      ${breakpoint(device.phone)} {
+        padding: 0 3%;
+
+        .MuiExpansionPanelSummary-content {
+          flex-direction: column;
+
+          p[style] {
+            margin-right: 0 !important;
+            padding: 0 !important;
+            margin-top: 8px;
+          }
+        }
+      }
     }
 
     .MuiCollapse-container[style] {
@@ -36,6 +54,12 @@ const Accordeon = styled.div`
         position: absolute;
         bottom: 20px;
         z-index: 1;
+
+        ${breakpoint(device.phone)} {
+          left: 0;
+          bottom: 40px;
+          width: 100%;
+        }
 
         button {
           padding: 4px 8px;

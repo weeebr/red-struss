@@ -4,6 +4,7 @@ import { lighten } from "polished";
 import { colors, icons, pageFullWidth } from "../theme";
 import Image from "./../generic-components/Image";
 import bgImage from "../assets/images/bg-dark.jpg";
+import { breakpoint, device } from "./../theme/index";
 
 const StyledFooter = styled.footer`
   background: linear-gradient(
@@ -23,6 +24,10 @@ const StyledFooter = styled.footer`
     transition: all 0.6s ease;
     font-weight: normal;
 
+    ${breakpoint(device.phone)} {
+      margin: 20px 0;
+    }
+
     &:hover {
       color: ${colors.primaryRed};
     }
@@ -31,11 +36,19 @@ const StyledFooter = styled.footer`
   .wieso-wir {
     padding: 60px 20px 60px 40px;
 
+    ${breakpoint(device.phone)} {
+      padding: 3%;
+    }
+
     .footer-cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       margin-left: -10px;
+
+      ${breakpoint(device.phone)} {
+        margin-left: 0;
+      }
     }
   }
 
@@ -52,11 +65,48 @@ const StyledFooter = styled.footer`
       width: calc(100% - 40px);
     }
 
+    ${breakpoint(device.phone)} {
+      width: 100%;
+    }
+
     p {
       margin: 0 0 15px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      line-height: 2;
+
+      ${breakpoint(device.phone)} {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
       &.company {
         font-family: OpenSansBold;
+      }
+
+      a,
+      span {
+        display: block;
+        float: left;
+
+        &.divider {
+          display: inline;
+        }
+      }
+
+      ${breakpoint(device.phone)} {
+        a,
+        span {
+          display: block;
+          float: left;
+          margin: 3% 0;
+
+          &.divider {
+            display: none;
+          }
+        }
       }
 
       img {
@@ -102,19 +152,20 @@ const Footer = () => {
         <h2>Kontakt</h2>
         <p className="company">Recycling- und Eventdienstleistungen Struss</p>
         <p>
-          Gundeldingerrain 10, 4053 Basel &nbsp;|&nbsp;
+          <span>Gundeldingerrain 10, 4053 Basel</span>
+          <span className="divider">&nbsp;|&nbsp;</span>
           <a href="tel:+41774478765">
             <Image src={icons.phone} />
-            077 447 87 65
+            &nbsp;077 447 87 65
           </a>
-          &nbsp;|&nbsp;
+          <span className="divider">&nbsp;|&nbsp;</span>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="mailto:info@red-struss.com"
           >
             <Image src={icons.email} />
-            info@red-struss.com
+            &nbsp;info@red-struss.com
           </a>
         </p>
       </div>
@@ -132,6 +183,12 @@ const Card = styled.div`
   flex-direction: column;
   margin: 20px 10px 0 10px;
   transition: all 0.3s ease;
+
+  ${breakpoint(device.phone)} {
+    max-width: 100%;
+    margin: 20px 0 0 0;
+    padding-bottom: 6%;
+  }
 
   &:hover {
     background: #070707;

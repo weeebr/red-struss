@@ -4,8 +4,8 @@ import mitarbeiter from "../../assets/data/mitarbeiter";
 import Image from "../../generic-components/Image";
 import { getImage } from "./ProfileImages";
 import styled from "styled-components";
-import { colors } from "./../../theme/index";
 import Profileinfo from "./ProfileInfo";
+import { colors, device, breakpoint } from "../../theme";
 
 const SliderWrapper = styled.div`
   margin: 0 7%;
@@ -16,6 +16,10 @@ const SliderWrapper = styled.div`
 
       .slick-track {
         margin-bottom: 10px;
+
+        ${breakpoint(device.phone)} {
+          margin-bottom: 49px;
+        }
       }
 
       .slick-slide {
@@ -24,14 +28,27 @@ const SliderWrapper = styled.div`
         cursor: pointer;
         transform: translateY(50%);
 
+        ${breakpoint(device.phone)} {
+          transform: translateY(100%);
+        }
+
         &.slick-current {
           transform-origin: top center;
           transform: scale(2);
           z-index: 2;
           margin: 0 2%;
 
+          ${breakpoint(device.phone)} {
+            transform: scale(3);
+            margin: 0 4%;
+          }
+
           img {
             border: 5px solid ${colors.primaryRed};
+
+            ${breakpoint(device.phone)} {
+              border: 3px solid ${colors.primaryRed};
+            }
           }
         }
 
@@ -49,7 +66,11 @@ const SliderWrapper = styled.div`
 
         img {
           border-radius: 50%;
-          border: 15px solid ${colors.primaryRed};
+          border: 10px solid ${colors.primaryRed};
+
+          ${breakpoint(device.phone)} {
+            border: 5px solid ${colors.primaryRed};
+          }
         }
       }
     }

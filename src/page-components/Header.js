@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../assets/images/logo.webp";
 import styled from "styled-components";
 import { pageFullWidth } from "../theme/index";
+import { breakpoint, device } from "./../theme/index";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -29,6 +30,11 @@ const StyledHeader = styled.header`
     width: unset;
   }
 
+  ${breakpoint(device.phone)} {
+    margin: 8px 3% -10px 3%;
+    padding: 20px 0;
+  }
+
   && a {
     display: flex;
     justify-content: center;
@@ -54,6 +60,14 @@ const StyledHeader = styled.header`
 
     @media (max-width: 960px) {
       font-size: 24px;
+    }
+
+    ${breakpoint(device.phone)} {
+      margin-top: 20px;
+      margin-left: 0;
+      font-size: 18px;
+      text-align: center;
+      width: 100%;
     }
   }
 `;

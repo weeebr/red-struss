@@ -5,6 +5,7 @@ import { colors, pageFullWidth } from "../theme";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import OverlayBg from "./OverlayBg";
 import Hamburger from "./Hamburger";
+import { breakpoint, device } from "./../theme/index";
 
 // prettier-ignore
 const StyledNavigation = styled.aside`
@@ -13,32 +14,8 @@ const StyledNavigation = styled.aside`
   position: relative;
   margin-right: 20px;
 
-  &.open {
-    margin-right: calc(277px + 68px - 20px);
-    left: 207px;
-  
-    nav.mobile {
-      position: fixed;
-      top: 176px;
-      opacity: 1;
-      height: 100vh;
-      background: white;
-      box-shadow: none;
-      z-index: 11;
-
-      a {
-        opacity: 1;
-        margin-left: 0;
-
-        &:last-child {
-          border-bottom: 1px solid #d0d0d0;
-        }
-      }
-
-      @media (max-width: 960px) {
-        top: 244px;
-      }
-    }
+  ${breakpoint(device.phone)} {
+    margin: 0;
   }
 
   nav {
@@ -55,6 +32,7 @@ const StyledNavigation = styled.aside`
       white-space: nowrap;
       background: white;
       transition: all 0.5s ease, background 0.1s ease;
+      height: 48px;
 
       &:not(:last-child) {
         border-bottom: 1px solid #d0d0d0;
@@ -64,6 +42,10 @@ const StyledNavigation = styled.aside`
         font-family: OpenSansBold;
         background: ${colors.primaryRed};
         color: white;
+
+        &:first-child {
+          border-bottom: 1px solid ${colors.primaryRed};
+        }
       }
 
 
@@ -84,6 +66,10 @@ const StyledNavigation = styled.aside`
       height: 1px;
       margin-left: -229px;
 
+      ${breakpoint(device.phone)} {
+        width: 0;
+      }
+
       a {
         opacity: 0;
         margin-left: -100px;
@@ -99,6 +85,42 @@ const StyledNavigation = styled.aside`
         &:nth-child(8) { transition-delay: 0.45s }*/
       }
     } 
+  }
+
+  &.open {
+    margin-right: calc(277px + 68px - 20px);
+    left: 207px;
+
+    ${breakpoint(device.phone)} {
+      margin-right: calc(277px + 68px - 7%);
+    }
+  
+    nav.mobile {
+      position: fixed;
+      top: 176px;
+      opacity: 1;
+      height: 100vh;
+      background: white;
+      box-shadow: none;
+      z-index: 11;
+
+      ${breakpoint(device.phone)} {
+        width: 277px;
+      }
+
+      a {
+        opacity: 1;
+        margin-left: 0;
+
+        &:last-child {
+          border-bottom: 1px solid #d0d0d0;
+        }
+      }
+
+      @media (max-width: 960px) {
+        top: 244px;
+      }
+    }
   }
 `;
 

@@ -12,6 +12,8 @@ import galleryImg3 from "../assets/images/home/gallery/3.webp";
 import galleryImg4 from "../assets/images/home/gallery/4.webp";
 import galleryImg5 from "../assets/images/home/gallery/5.webp";
 import { getAltText } from "./../generic-components/Image";
+import { breakpoint, device } from "./../theme/index";
+import { Hidden } from "@material-ui/core";
 
 const StyledHome = styled.div`
   & > p {
@@ -21,14 +23,29 @@ const StyledHome = styled.div`
   .slick-slider {
     margin-bottom: 140px;
 
-    .slick-dots {
+    ${breakpoint(device.phone)} {
+      margin-bottom: 14%;
+    }
+
+    .slick-dots[style] {
       height: 0;
       position: static;
+      display: flex !important;
+      justify-content: center;
 
       li {
         width: 100px;
         position: static;
         margin-top: 8px;
+
+        ${breakpoint(device.phone)} {
+          width: 20%;
+          margin: 0;
+
+          &:not(:last-child) {
+            margin-right: 8px;
+          }
+        }
 
         .img-wrapper {
           border: 3px solid ${colors.primaryRed};
@@ -60,18 +77,23 @@ const StyledHome = styled.div`
             opacity: 0.8;
           }
         }
-
-        p {
-          position: absolute;
-          top: 50%;
-          left: 25%;
-          width: 50%;
-          padding: 20px;
-          box-shadow: 0 0 14px #b3b3b3;
-          background: white;
-          display: none;
-        }
       }
+    }
+  }
+
+  .slider-text {
+    position: absolute;
+    top: 56%;
+    left: 29%;
+    width: 50%;
+    padding: 20px;
+    box-shadow: 0 0 14px #b3b3b3;
+    background: white;
+
+    ${breakpoint(device.phone)} {
+      left: 0;
+      position: relative;
+      width: 100%;
     }
   }
 
@@ -82,6 +104,10 @@ const StyledHome = styled.div`
     flex-wrap: wrap;
     margin-bottom: 20px;
     margin-left: -10px;
+
+    ${breakpoint(device.phone)} {
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -95,6 +121,16 @@ const StyledAngebot = styled.a`
   margin-left: 10px;
   margin-right: 10px;
 
+  ${breakpoint(device.phone)} {
+    margin-right: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
   &:focus,
   &:hover {
     border-bottom: 0;
@@ -102,16 +138,27 @@ const StyledAngebot = styled.a`
 
     img {
       transform: scale(0.8) translateX(-20px);
+
+      ${breakpoint(device.phone)} {
+        transform: scale(0.8);
+      }
     }
 
      p {
       padding-left: 10px;
-      /*background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), ${colors.primaryRed};*/
+      /*background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), ${
+        colors.primaryRed
+      };*/
     }
   }
 
   img {
     transform: scale(0.7) translateX(-20px);
+
+    ${breakpoint(device.phone)} {
+      transform: scale(0.7);
+    }
+
     transition: all 0.5s ease;
     max-width: unset;
   }
@@ -165,10 +212,6 @@ const Home = () => {
   const customPaging = i => {
     return (
       <div>
-        {texts[i].length > 0 ? (
-          <p className={i === currentSlideIdx ? "active" : null}>{texts[i]}</p>
-        ) : null}
-
         <div className="img-wrapper">
           <img
             key={`thumb-${galleryImages[i]}`}
@@ -198,6 +241,15 @@ const Home = () => {
           <img key={i} src={i} alt={getAltText(i)} />
         ))}
       </SlickSlider>
+      {galleryImages.map((i, idx) => (
+        <Hidden xsUp={idx !== currentSlideIdx} key={idx}>
+          {texts[idx].length > 0 ? (
+            <p className="slider-text" key={idx}>
+              {texts[idx]}
+            </p>
+          ) : null}
+        </Hidden>
+      ))}
       <p>Entdecken Sie die passende Dienstleistung für Sie als ...</p>
       <div className="angebote">
         <Angebot id={0} img={unternehmenImage} text="Unternehmen" />

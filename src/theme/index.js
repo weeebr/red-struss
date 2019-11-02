@@ -17,11 +17,13 @@ export const colors = {
 export const device = {
   mobile: "767px",
   tablet: "991px",
-  sm: "600px",
-  md: "960px",
-  lg: "1280px",
+  phone: "600px",
+  md: "900px",
+  lg: "1200px",
   xl: "1920px",
 };
+
+export const breakpoint = device => `@media (max-width:${device})`;
 
 export const muiFontRecommendations = {
   sm: {
@@ -57,8 +59,6 @@ export const muiFontRecommendations = {
     h6: "20px",
   },
 };
-
-export const breakpoint = device => `@media (max-width:${device.mobile})`;
 
 export const icons = {
   aufrichtig: aufrichtigIcon,

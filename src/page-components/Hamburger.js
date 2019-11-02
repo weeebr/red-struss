@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "./../theme";
+import { breakpoint, device } from "./../theme/index";
 
 const StyledHamburger = styled.div`
   width: 48px;
@@ -13,6 +14,13 @@ const StyledHamburger = styled.div`
   cursor: pointer;
   background: ${colors.primaryRed};
   transition: all 0.6s ease, top 0.3s ease;
+
+  ${breakpoint(device.phone)} {
+    position: fixed;
+    top: 0;
+    right: 3%;
+    margin-top: 3%;
+  }
 
   &:hover {
     background: black;
@@ -42,6 +50,11 @@ const StyledHamburger = styled.div`
 
     @media (max-width: 960px) {
       top: 244px;
+    }
+
+    ${breakpoint(device.phone)} {
+      margin-top: 0;
+      right: unset;
     }
 
     div {
