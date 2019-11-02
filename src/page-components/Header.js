@@ -31,7 +31,7 @@ const StyledHeader = styled.header`
   }
 
   ${breakpoint(device.phone)} {
-    margin: 8px 3% -10px 3%;
+    margin: 8px 4% -10px 4%;
     padding: 20px 0;
   }
 

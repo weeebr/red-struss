@@ -16,8 +16,9 @@ import { breakpoint, device } from "./../theme/index";
 import { Hidden } from "@material-ui/core";
 
 const StyledHome = styled.div`
-  & > p {
-    margin-bottom: 40px;
+  & > p:not(.slider-text) {
+    padding: 40px 0;
+    margin: 0;
   }
 
   .slick-slider {
@@ -120,15 +121,16 @@ const StyledAngebot = styled.a`
   width: 200px;
   margin-left: 10px;
   margin-right: 10px;
+  background: white;
 
   ${breakpoint(device.phone)} {
     margin-right: 0;
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 0;
+    margin-bottom: 15%;
   }
 
   &:focus,

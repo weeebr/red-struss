@@ -185,7 +185,7 @@ const Card = styled.div`
   transition: all 0.3s ease;
 
   ${breakpoint(device.phone)} {
-    max-width: 100%;
+    max-width: 92%;
     margin: 20px 0 0 0;
     padding-bottom: 6%;
   }

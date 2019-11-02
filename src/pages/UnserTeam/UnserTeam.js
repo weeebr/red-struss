@@ -18,7 +18,8 @@ const SliderWrapper = styled.div`
         margin-bottom: 10px;
 
         ${breakpoint(device.phone)} {
-          margin-bottom: 49px;
+          padding-bottom: 13%;
+          margin: 0;
         }
       }
 
@@ -85,7 +86,11 @@ const SliderWrapper = styled.div`
 
     .slick-prev,
     .slick-next {
-      top: calc(50% + 2px);
+      top: calc(50% - 1px);
+
+      ${breakpoint(device.phone)} {
+        top: calc(50% - 4px);
+      }
 
       &::before {
         color: black;

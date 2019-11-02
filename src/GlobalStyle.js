@@ -45,10 +45,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: OpenSans;
     line-height: 1.5;
     letter-spacing: 0.01038em;
-
-    ${breakpoint(device.phone)} {
-      font-size: 14px;
-    }
   }
 
   body,
@@ -146,7 +142,7 @@ const GlobalStyle = createGlobalStyle`
       }
 
       ${breakpoint(device.phone)} {
-        margin: 0 3% 80px 3%;
+        margin: 0 4% 80px 4%;
       }
 
       & > .content {
@@ -163,6 +159,8 @@ const GlobalStyle = createGlobalStyle`
         ${breakpoint(device.phone)} {
           padding: 4%;
           width: 100%;
+          background: transparent;
+    box-shadow: none;
         }
       }
     }
