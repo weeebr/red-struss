@@ -17,7 +17,11 @@ const Accordeon = styled.div`
 
     .MuiExpansionPanelSummary-root {
       margin-left: 24px;
-      background: whitesmoke;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(210, 210, 210, 0.35)
+      );
     }
 
     .MuiCollapse-container[style] {
