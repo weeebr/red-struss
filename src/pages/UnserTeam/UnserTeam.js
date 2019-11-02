@@ -42,6 +42,8 @@ const StyledCarousel = styled(Carousel)`
 `;
 
 const UnserTeam = () => {
+  const [currentSlideIdx, setCurrentSlideIdx] = React.useState(0);
+
   const shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -60,9 +62,15 @@ const UnserTeam = () => {
         showStatus={false}
         showThumbs={false}
         stopOnHover
+        onChange={setCurrentSlideIdx}
       >
-        {shuffleArray(mitarbeiter).map(m => (
-          <SlideItem key={m} member={m} />
+        {shuffleArray(mitarbeiter).map((m, idx) => (
+          <SlideItem
+            currentSlideIdx={currentSlideIdx}
+            idx={idx}
+            key={m}
+            member={m}
+          />
         ))}
       </StyledCarousel>
     </>

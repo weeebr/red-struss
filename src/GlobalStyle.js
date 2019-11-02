@@ -83,6 +83,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeSpeed;
     font-family: OpenSans;
     line-height: 1.5;
+    background: black;
   }
 
   p {

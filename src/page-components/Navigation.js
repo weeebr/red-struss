@@ -24,7 +24,7 @@ const StyledNavigation = styled.aside`
       height: 100vh;
       background: #e8e8e8;
       box-shadow: none;
-      z-index: 3;
+      z-index: 11;
 
       a {
         opacity: 1;

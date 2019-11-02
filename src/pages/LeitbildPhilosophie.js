@@ -11,6 +11,15 @@ const Accordeon = styled.div`
     margin-top: -4px;
     margin-left: -24px;
 
+    .MuiExpansionPanel-root:before {
+      content: unset;
+    }
+
+    .MuiExpansionPanelSummary-root {
+      margin-left: 24px;
+      background: whitesmoke;
+    }
+
     .MuiCollapse-container[style] {
       min-height: 200px !important;
       visibility: visible;
@@ -22,7 +31,7 @@ const Accordeon = styled.div`
         justify-content: center;
         position: absolute;
         bottom: 20px;
-        z-index: 2;
+        z-index: 1;
 
         button {
           padding: 4px 8px;
