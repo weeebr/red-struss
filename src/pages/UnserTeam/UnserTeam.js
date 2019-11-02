@@ -12,8 +12,11 @@ const SliderWrapper = styled.div`
 
   .slick-slider {
     .slick-list {
-      margin-bottom: 10px;
       position: relative;
+
+      .slick-track {
+        margin-bottom: 10px;
+      }
 
       .slick-slide {
         transition: all 0.3s ease;
@@ -98,14 +101,7 @@ const UnserTeam = () => {
           afterChange={setCurrentSlideIdx}
         >
           {mitarbeiter.map((m, idx) => (
-            <Image
-              style={{
-                transform:
-                  currentSlideIdx > idx ? "skewX(30deg)" : "skewY(30deg)",
-              }}
-              key={`img-${idx}`}
-              src={getImage(m.name)}
-            />
+            <Image key={`img-${idx}`} src={getImage(m.name)} />
           ))}
         </SlickSlider>
       </SliderWrapper>
