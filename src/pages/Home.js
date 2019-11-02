@@ -115,8 +115,6 @@ const Home = () => {
     galleryImg5,
   ];
 
-  console.log(galleryImages);
-
   return (
     <StyledHome>
       <h1>Home</h1>

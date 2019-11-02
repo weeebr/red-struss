@@ -55,7 +55,7 @@ const UnserTeam = () => {
 
   return (
     <>
-      <h1>Unser Team</h1>
+      <h1>Unser Team (currently WIP)</h1>
       <StyledCarousel
         showArrows={false}
         showIndicators
