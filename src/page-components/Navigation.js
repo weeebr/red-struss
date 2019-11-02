@@ -29,6 +29,10 @@ const StyledNavigation = styled.aside`
       a {
         opacity: 1;
         margin-left: 0;
+
+        &:last-child {
+          border-bottom: 1px solid #d0d0d0;
+        }
       }
 
       @media (max-width: 960px) {
@@ -51,7 +55,10 @@ const StyledNavigation = styled.aside`
       white-space: nowrap;
       background: white;
       transition: all 0.5s ease, background 0.1s ease;
-      border-bottom: 1px solid #d0d0d0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #d0d0d0;
+      }
 
       &.active {
         font-family: OpenSansBold;
