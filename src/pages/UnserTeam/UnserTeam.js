@@ -18,7 +18,7 @@ const SliderWrapper = styled.div`
         margin-bottom: 10px;
 
         ${breakpoint(device.phone)} {
-          padding-bottom: 2%;
+          padding-bottom: 22%;
           margin: 0;
         }
       }
