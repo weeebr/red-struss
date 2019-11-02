@@ -1,11 +1,9 @@
 import React from "react";
-import Slider from "react-slick";
+import { SlickSlider } from "../../vendors";
 import mitarbeiter from "../../assets/data/mitarbeiter";
 import Image from "../../generic-components/Image";
 import { getImage } from "./ProfileImages";
 import styled from "styled-components";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { colors } from "./../../theme/index";
 import Profileinfo from "./ProfileInfo";
 
@@ -90,7 +88,7 @@ const UnserTeam = () => {
     <>
       <h1>Unser Team</h1>
       <SliderWrapper>
-        <Slider
+        <SlickSlider
           arrows
           infinite
           slidesToShow={7}
@@ -109,7 +107,7 @@ const UnserTeam = () => {
               src={getImage(m.name)}
             />
           ))}
-        </Slider>
+        </SlickSlider>
       </SliderWrapper>
       {mitarbeiter.map((m, idx) => (
         <Profileinfo

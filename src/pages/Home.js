@@ -5,7 +5,7 @@ import eventVeranstalterImage from "../assets/images/home/event-veranstalter.web
 import Image from "./../generic-components/Image";
 import styled from "styled-components";
 import { colors } from "./../theme";
-import { Carousel } from "react-responsive-carousel";
+import { SlickSlider } from "../vendors";
 import galleryImg1 from "../assets/images/home/gallery/1.webp";
 import galleryImg2 from "../assets/images/home/gallery/2.webp";
 import galleryImg3 from "../assets/images/home/gallery/3.webp";
@@ -18,23 +18,60 @@ const StyledHome = styled.div`
     margin-bottom: 40px;
   }
 
-  .carousel {
-    .thumbs {
-      display: flex;
-      justify-content: center;
+  .slick-slider {
+    margin-bottom: 140px;
 
-      & > * {
-        cursor: pointer;
+    .slick-dots {
+      height: 0;
+      position: static;
+
+      li {
+        width: 100px;
+        position: static;
+        margin-top: 8px;
+
+        .img-wrapper {
+          border: 3px solid ${colors.primaryRed};
+          position: relative;
+
+          &::before {
+            background: black;
+            transition: all 0.7s ease;
+            position: absolute;
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        &.slick-active {
+          .img-wrapper::before {
+            opacity: 0;
+          }
+
+          p {
+            display: block;
+          }
+        }
+
+        &:not(.slick-active) {
+          .img-wrapper::before {
+            opacity: 0.8;
+          }
+        }
+
+        p {
+          position: absolute;
+          top: 50%;
+          left: 25%;
+          width: 50%;
+          padding: 20px;
+          box-shadow: 0 0 14px #b3b3b3;
+          background: white;
+          display: none;
+        }
       }
-    }
-
-    .control-dots .dot {
-      background: ${colors.primaryRed};
-      width: 14px;
-      height: 14px;
-      margin: 0 12px;
-      background: red;
-      box-shadow: 0 0 0 3px white;
     }
   }
 
@@ -106,7 +143,12 @@ const Angebot = ({ id, img, text }) => {
   );
 };
 
+const j = obj => JSON.stringify(obj, null, 2);
+const c = obj => console.log("pwe::", { ...obj });
+
 const Home = () => {
+  const [currentSlideIdx, setCurrentSlideIdx] = React.useState(0);
+
   const galleryImages = [
     galleryImg1,
     galleryImg2,
@@ -115,14 +157,50 @@ const Home = () => {
     galleryImg5,
   ];
 
+  const texts = [
+    "Nachhaltigkeit und Recycling sind vielgehörte Begriffe. Doch sie sind ganz konkrete und wichtige Ansätze zum Schutz und Erhalt unserer Umwelt.",
+    "Und das fängt bereits im Kleinen an: In unseren Haushälten, in unserem täglichen Leben.",
+    "Unser erklärtes Ziel ist die Verbesserung der Rücklaufquote von rezyklierbaren Materialien. Wir leisten unseren Beitrag zu einem sinnvollen und funktionierenden Wertstoffkreislauf.",
+    "",
+    "",
+  ];
+
+  const customPaging = i => {
+    return (
+      <div>
+        {texts[i].length > 0 ? (
+          <p className={i === currentSlideIdx ? "active" : null}>{texts[i]}</p>
+        ) : null}
+
+        <div className="img-wrapper">
+          <img
+            key={`thumb-${galleryImages[i]}`}
+            src={galleryImages[i]}
+            alt={getAltText(galleryImages[i])}
+          />
+        </div>
+      </div>
+    );
+  };
+
   return (
     <StyledHome>
       <h1>Home</h1>
-      <Carousel showStatus={false}>
+      <SlickSlider
+        arrows
+        dots
+        infinite
+        slidesToShow={1}
+        centerMode
+        focusOnSelect
+        centerPadding={0}
+        afterChange={setCurrentSlideIdx}
+        customPaging={customPaging}
+      >
         {galleryImages.map(i => (
           <img key={i} src={i} alt={getAltText(i)} />
         ))}
-      </Carousel>
+      </SlickSlider>
       <p>Entdecken Sie die passende Dienstleistung für Sie als ...</p>
       <div className="angebote">
         <Angebot id={0} img={unternehmenImage} text="Unternehmen" />
