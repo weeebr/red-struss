@@ -1,78 +1,124 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import styled from "styled-components";
-import { colors } from "../../theme";
+import Slider from "react-slick";
 import mitarbeiter from "../../assets/data/mitarbeiter";
-import SlideItem from "./SlideItem";
+import Image from "../../generic-components/Image";
+import { getImage } from "./ProfileImages";
+import styled from "styled-components";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { colors } from "./../../theme/index";
+import Profileinfo from "./ProfileInfo";
 
-const StyledCarousel = styled(Carousel)`
-  .carousel {
-    display: flex;
-    .slide {
-      background: transparent;
-      height: 100%;
+const SliderWrapper = styled.div`
+  margin: 0 7%;
 
-      &:not(.selected) {
-        height: 0;
+  .slick-slider {
+    .slick-list {
+      margin-bottom: 10px;
+      position: relative;
+
+      .slick-slide {
+        transition: all 0.3s ease;
+        position: relative;
+        cursor: pointer;
+        transform: translateY(50%);
+
+        &.slick-current {
+          transform-origin: top center;
+          transform: scale(2);
+          z-index: 2;
+          margin: 0 2%;
+
+          img {
+            border: 5px solid ${colors.primaryRed};
+          }
+        }
+
+        &:not(.slick-current) {
+          div::before {
+            position: absolute;
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+          }
+        }
+
+        img {
+          border-radius: 50%;
+          border: 15px solid ${colors.primaryRed};
+        }
       }
     }
-  }
 
-  && .control-dots {
-    padding: 0;
-    display: inline-flex;
-    margin: 0;
-    position: static;
-    width: 305px;
-    position: absolute;
-    right: -120px;
-    transform: rotate(90deg);
-    top: 280px;
-    bottom: unset;
+    .slick-prev {
+      left: -7%;
+    }
 
-    .dot {
-      background: ${colors.primaryRed};
-      width: 14px;
-      height: 14px;
-      margin: 0 12px;
-      background: red;
-      box-shadow: 0 0 0 3px white;
+    .slick-next {
+      right: -7%;
+    }
+
+    .slick-prev,
+    .slick-next {
+      top: calc(50% + 2px);
+
+      &::before {
+        color: black;
+      }
     }
   }
 `;
 
+const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+
+  return array;
+};
+
+shuffleArray(mitarbeiter);
+
 const UnserTeam = () => {
   const [currentSlideIdx, setCurrentSlideIdx] = React.useState(0);
 
-  const shuffleArray = array => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-
-    return array;
-  };
-
   return (
     <>
-      <h1>Unser Team (currently WIP)</h1>
-      <StyledCarousel
-        showArrows={false}
-        showIndicators
-        showStatus={false}
-        showThumbs={false}
-        stopOnHover
-        onChange={setCurrentSlideIdx}
-      >
-        {shuffleArray(mitarbeiter).map((m, idx) => (
-          <SlideItem
-            currentSlideIdx={currentSlideIdx}
-            idx={idx}
-            key={m}
-            member={m}
-          />
-        ))}
-      </StyledCarousel>
+      <h1>Unser Team</h1>
+      <SliderWrapper>
+        <Slider
+          arrows
+          infinite
+          slidesToShow={7}
+          centerMode
+          focusOnSelect
+          centerPadding={40}
+          afterChange={setCurrentSlideIdx}
+        >
+          {mitarbeiter.map((m, idx) => (
+            <Image
+              style={{
+                transform:
+                  currentSlideIdx > idx ? "skewX(30deg)" : "skewY(30deg)",
+              }}
+              key={`img-${idx}`}
+              src={getImage(m.name)}
+            />
+          ))}
+        </Slider>
+      </SliderWrapper>
+      {mitarbeiter.map((m, idx) => (
+        <Profileinfo
+          member={m}
+          key={`hidden-${idx}`}
+          idx={idx}
+          currentSlideIdx={currentSlideIdx}
+        />
+      ))}
     </>
   );
 };

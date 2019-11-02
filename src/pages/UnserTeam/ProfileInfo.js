@@ -1,23 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "../../theme";
-import { getImage } from "./ProfileImages";
-import Image from "../../generic-components/Image";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Hidden } from "@material-ui/core";
 
-const StyledSlide = styled.div`
-  padding: 20px;
-  margin-right: 60px;
-
-  &&& img {
-    border-radius: 50%;
-    border: 12px solid white;
-    float: left;
-    margin: 0px 30px 20px 10px;
-    width: unset;
-  }
-
+const StyledDiv = styled.div`
   h3 {
     font-size: 22px;
     color: ${colors.primaryRed};
@@ -26,17 +12,22 @@ const StyledSlide = styled.div`
   h4 {
     font-size: 16px;
     text-transform: uppercase;
-    margin-bottom: 40px;
   }
 
   h3,
-  h4 {
+  h4,
+  .since {
     font-family: OpenSansLight;
     text-align: center;
   }
+
+  .since {
+    margin-bottom: 40px;
+    margin-top: 8px;
+  }
 `;
 
-const SlideItem = ({ member, idx, currentSlideIdx }) => {
+const Profileinfo = ({ member, idx, currentSlideIdx }) => {
   const {
     name,
     seit,
@@ -48,33 +39,36 @@ const SlideItem = ({ member, idx, currentSlideIdx }) => {
   } = member;
 
   return (
-    <StyledSlide>
-      <Image src={getImage(name)} />
-      <Hidden xsUp={idx !== currentSlideIdx}>
+    <Hidden key={`hidden-${idx}`} xsUp={idx !== currentSlideIdx}>
+      <StyledDiv>
         <h3>{name}</h3>
         <h4>{funktion}</h4>
-        <p>
+        <h5 className="since">
           <strong>Teammitglied: seit {seit}</strong>
-        </p>
+        </h5>
         <p style={{ marginTop: 20 }}>
           <strong>Darum arbeite ich für RED Struss: </strong>
+          <br />
           {motivation}
         </p>
         <p>
           <strong>Mein Bezug zum Thema Umweltschutz: </strong>
+          <br />
           {umweltschutz}
         </p>
         <p>
           <strong>So weit gehe ich beim Recycling: </strong>
+          <br />
           {recycling}
         </p>
         <p>
           <strong>Das macht mich einzigartig: </strong>
+          <br />
           {einzigartig}
         </p>
-      </Hidden>
-    </StyledSlide>
+      </StyledDiv>
+    </Hidden>
   );
 };
 
-export default SlideItem;
+export default Profileinfo;

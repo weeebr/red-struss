@@ -65,7 +65,7 @@ const Pages = () => {
               path="/referenzen"
               component={ReferenzenPartner}
             />
-            <Page title="UnserTeam" path="/team" component={UnserTeam} />
+            <Page title="Unser Team" path="/team" component={UnserTeam} />
             <Page
               title="Wissenswertes"
               path="/wissenswertes"
