@@ -143,9 +143,6 @@ const Angebot = ({ id, img, text }) => {
   );
 };
 
-const j = obj => JSON.stringify(obj, null, 2);
-const c = obj => console.log("pwe::", { ...obj });
-
 const Home = () => {
   const [currentSlideIdx, setCurrentSlideIdx] = React.useState(0);
 

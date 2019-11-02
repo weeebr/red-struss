@@ -53,10 +53,11 @@ const GlobalStyle = createGlobalStyle`
   h3,
   h4,
   p,
-  ul[class],
-  ol[class],
+  ul,
+  ol,
   li {
     margin: 0;
+    padding: 0;
   }
 
   img {
@@ -64,10 +65,9 @@ const GlobalStyle = createGlobalStyle`
     display: block;
   }
 
-  ul[class],
+  ul,
   ol[class] {
     list-style: none;
-    padding: 0;
   }
 
   input,
