@@ -18,7 +18,7 @@ const SliderWrapper = styled.div`
         margin-bottom: 10px;
 
         ${breakpoint(device.phone)} {
-          padding-bottom: 13%;
+          padding-bottom: 2%;
           margin: 0;
         }
       }
@@ -41,7 +41,7 @@ const SliderWrapper = styled.div`
 
           ${breakpoint(device.phone)} {
             transform: scale(3);
-            margin: 0 4%;
+            margin: 0 3.5%;
           }
 
           img {
@@ -77,11 +77,11 @@ const SliderWrapper = styled.div`
     }
 
     .slick-prev {
-      left: -7%;
+      left: -15%;
     }
 
     .slick-next {
-      right: -7%;
+      right: -15%;
     }
 
     .slick-prev,
@@ -89,7 +89,7 @@ const SliderWrapper = styled.div`
       top: calc(50% - 1px);
 
       ${breakpoint(device.phone)} {
-        top: calc(50% - 4px);
+        top: 50%;
       }
 
       &::before {
@@ -125,6 +125,14 @@ const UnserTeam = () => {
           focusOnSelect
           centerPadding={40}
           afterChange={setCurrentSlideIdx}
+          responsive={[
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+          ]}
         >
           {mitarbeiter.map((m, idx) => (
             <Image key={`img-${idx}`} src={getImage(m.name)} />

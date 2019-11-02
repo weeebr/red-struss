@@ -171,6 +171,7 @@ const StyledAngebot = styled.a`
     padding: 8px;
     color: white;
     margin-top: 0;
+    white-space: nowrap;
   }
 `;
 
