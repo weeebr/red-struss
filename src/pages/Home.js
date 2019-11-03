@@ -17,11 +17,13 @@ import { Hidden } from "@material-ui/core";
 
 const StyledHome = styled.div`
   & > p:not(.slider-text) {
-    padding: 40px 0 10px 0;
-    margin: 0;
     font-family: OpenSansBold;
+    padding: 0 0 30px 0;
+    margin-top: -20px;
 
     ${breakpoint(device.phone)} {
+      padding: 0 0 10px 0;
+      margin: 0;
       text-align: center;
     }
   }
