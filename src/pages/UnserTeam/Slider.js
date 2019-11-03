@@ -26,6 +26,10 @@ const SliderWrapper = styled.div`
         transform: translate(0, 45%);
         display: flex;
 
+        ${breakpoint(device.phone)} {
+          transform: translate(0, 25%);
+        }
+
         & > div {
           flex-basis: 100%;
           text-align: center;
@@ -91,7 +95,7 @@ const Slider = React.forwardRef(({ mitarbeiter }, ref) => {
             {
               breakpoint: 600,
               settings: {
-                slidesToShow: 5,
+                slidesToShow: 3,
               },
             },
           ]}
