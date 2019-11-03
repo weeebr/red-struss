@@ -18,7 +18,7 @@ const SliderWrapper = styled.div`
         display: flex;
 
         ${breakpoint(device.phone)} {
-          margin-left: -29%;
+          margin-left: -25%;
         }
       }
 

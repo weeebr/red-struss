@@ -280,7 +280,7 @@ const Home = () => {
           </Hidden>
         ))}
       </SliderWrapper>
-      <p>Entdecken Sie die passende Dienst&shy;leistung für Sie als&nbsp;...</p>
+      <p>Entdecken Sie die passende Dienstleistung für Sie als&nbsp;...</p>
       <div className="angebote">
         <Angebot id={0} img={unternehmenImage} text="Unternehmen" />
         <Angebot id={1} img={privaterHaushaltImage} text="privater Haushalt" />
