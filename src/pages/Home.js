@@ -17,13 +17,9 @@ import { Hidden } from "@material-ui/core";
 
 const StyledHome = styled.div`
   & > p:not(.slider-text) {
-    padding: 40px 0;
+    padding: 40px 0 10px 0;
     margin: 0;
     font-family: OpenSansBold;
-
-    ${breakpoint(device.phone)} {
-      padding: 20px;
-    }
   }
 
   .slick-slider {
@@ -145,7 +141,7 @@ const StyledAngebot = styled.a`
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 15%;
+    margin-bottom: 20px;
     padding: 0 20px 20px 20px;
   }
 
