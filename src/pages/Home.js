@@ -241,7 +241,7 @@ const Home = () => {
       <h1>Home</h1>
       <SliderWrapper>
         <SlickSlider
-          arrows
+          arrows={false}
           dots
           infinite
           slidesToShow={1}
