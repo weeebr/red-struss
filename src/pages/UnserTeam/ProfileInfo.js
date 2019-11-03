@@ -26,6 +26,7 @@ const StyledDiv = styled.div`
     padding: 12px 14px;
     margin-bottom: 40px;
     margin-top: 8px;
+    cursor: pointer;
 
     &:not(:last-child) {
       margin-right: 16px;

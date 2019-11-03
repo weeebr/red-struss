@@ -72,6 +72,10 @@ const StyledTabs = styled.div`
   .react-swipeable-view-container {
     background: white;
 
+    ${breakpoint(device.phone)} {
+      background: transparent;
+    }
+
     & > div[aria-hidden="false"] {
       height: 100%;
     }

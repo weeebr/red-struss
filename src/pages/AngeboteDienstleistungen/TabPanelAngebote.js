@@ -8,6 +8,7 @@ import basicImage from "../../assets/images/angebote/Basic.webp";
 import eventImage from "../../assets/images/angebote/Event.webp";
 import apcImage from "../../assets/images/angebote/APC.webp";
 import Image from "../../generic-components/Image";
+import { breakpoint, device } from "./../../theme/index";
 
 const StyledAngebote = styled.div`
   margin-bottom: 80px;
@@ -70,10 +71,19 @@ const StyledAngebote = styled.div`
     .content {
       display: flex;
 
+      ${breakpoint(device.phone)} {
+        flex-direction: column;
+      }
+
       img {
         min-width: 168px;
         height: 168px;
         margin: 30px;
+
+        ${breakpoint(device.phone)} {
+          object-fit: contain;
+          margin: 30px auto;
+        }
       }
 
       .text p {
@@ -99,6 +109,9 @@ const StyledAngebote = styled.div`
       color: white;
       transform: rotate(-6deg);
       z-index: 1;
+      ${breakpoint(device.phone)} {
+        left: 25%;
+      }
     }
   }
 `;
