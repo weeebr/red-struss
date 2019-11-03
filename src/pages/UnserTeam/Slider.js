@@ -16,6 +16,9 @@ const SliderWrapper = styled.div`
       .slick-track {
         margin-bottom: 10px;
         display: flex;
+        ${breakpoint(device.phone)} {
+          margin-left: -29%;
+        }
       }
 
       .slick-slide {
@@ -24,19 +27,11 @@ const SliderWrapper = styled.div`
         cursor: pointer;
         transform: scale(0.7);
 
-        ${breakpoint(device.phone)} {
-          margin: 0 -0.4%;
-        }
-
         &.slick-current {
           margin: 0 15px;
           transform: scale(1);
           transform-origin: center;
           z-index: 2;
-
-          ${breakpoint(device.phone)} {
-            margin: 0 5px;
-          }
 
           img {
             border: 4px solid ${colors.primaryRed};
