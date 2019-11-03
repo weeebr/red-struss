@@ -36,7 +36,7 @@ const StyledAngebote = styled.div`
       left: 0;
       content: "i";
       font-size: 98px;
-      font-family: Times New Roman;
+      font-family: TimesNewRoman, "Times New Roman";
       color: #8abbe2;
       font-style: italic;
       transition: all 0.6s ease;
