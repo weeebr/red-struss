@@ -42,6 +42,10 @@ const StyledHeader = styled.header`
     border-bottom: 0;
     margin: 7px 12px 2px 2px;
 
+    ${breakpoint(device.phone)} {
+      margin-top: 30px;
+    }
+    
     @media (min-width: ${pageFullWidth + 130}px) {
       width: 277px;
     }
