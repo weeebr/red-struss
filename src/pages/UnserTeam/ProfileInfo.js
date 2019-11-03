@@ -21,13 +21,19 @@ const StyledDiv = styled.div`
     text-align: center;
   }
 
-  .since {
+  button {
+    background: ${colors.primaryRed};
+    padding: 4px 8px;
     margin-bottom: 40px;
     margin-top: 8px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
   }
 `;
 
-const Profileinfo = ({ member, idx, currentSlideIdx }) => {
+const Profileinfo = ({ member, idx, currentSlideIdx, slider }) => {
   const {
     name,
     seit,
@@ -38,6 +44,13 @@ const Profileinfo = ({ member, idx, currentSlideIdx }) => {
     einzigartig,
   } = member;
 
+  const nextSlide = () => {
+    slider.current.next();
+  };
+  const prevSlide = () => {
+    slider.current.prev();
+  };
+
   return (
     <Hidden key={`hidden-${idx}`} xsUp={idx !== currentSlideIdx}>
       <StyledDiv>
@@ -46,6 +59,10 @@ const Profileinfo = ({ member, idx, currentSlideIdx }) => {
         <h5 className="since">
           <strong>Teammitglied: seit {seit}</strong>
         </h5>
+        <div style={{ textAlign: "center" }}>
+          <button onClick={prevSlide}>❮ Previous</button>
+          <button onClick={nextSlide}>Next ❯</button>
+        </div>
         <p style={{ marginTop: 20 }}>
           <strong>Darum arbeite ich für RED Struss: </strong>
           <br />

@@ -39,9 +39,7 @@ const StyledNavigation = styled.aside`
       }
 
       &.active {
-        font-family: OpenSansBold;
         background: ${colors.primaryRed};
-        color: white;
 
         &:first-child {
           border-bottom: 1px solid ${colors.primaryRed};
@@ -51,7 +49,6 @@ const StyledNavigation = styled.aside`
 
       &:focus,
       &:hover {
-        color: white;
         border-bottom: 1px solid ${colors.primaryRed};
         background: ${colors.primaryRed};
         padding: 12px 15px 12px 25px;

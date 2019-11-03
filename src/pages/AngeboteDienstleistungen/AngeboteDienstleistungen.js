@@ -13,7 +13,7 @@ const AngeboteDienstleistungen = () => {
     const isIdSet = () => url.substring(1).includes("/");
 
     history.push(
-      (isIdSet ? url.substring(0, url.lastIndexOf("/")) : url) + "/" + id
+      (isIdSet() ? url.substring(0, url.lastIndexOf("/")) : url) + "/" + id
     );
   };
 

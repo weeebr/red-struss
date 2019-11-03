@@ -157,10 +157,10 @@ const GlobalStyle = createGlobalStyle`
         }
 
         ${breakpoint(device.phone)} {
-          padding: 4%;
+          padding: 0;
           width: 100%;
           background: transparent;
-    box-shadow: none;
+          box-shadow: none;
         }
       }
     }

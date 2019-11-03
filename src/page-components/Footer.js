@@ -37,7 +37,7 @@ const StyledFooter = styled.footer`
     padding: 60px 20px 60px 40px;
 
     ${breakpoint(device.phone)} {
-      padding: 3%;
+      padding: 4%;
     }
 
     .footer-cards {
@@ -185,7 +185,7 @@ const Card = styled.div`
   transition: all 0.3s ease;
 
   ${breakpoint(device.phone)} {
-    max-width: 92%;
+    max-width: 100%;
     margin: 20px 0 0 0;
     padding-bottom: 6%;
   }
@@ -211,6 +211,10 @@ const Card = styled.div`
 
   .img-wrapper {
     justify-self: flex-end;
+
+    img {
+      max-height: 60px;
+    }
   }
 `;
 

@@ -84,12 +84,18 @@ const StyledHome = styled.div`
 
   .slider-text {
     position: absolute;
-    top: 56%;
-    left: 29%;
+    bottom: 10%;
+    left: 25%;
     width: 50%;
     padding: 20px;
     box-shadow: 0 0 14px #b3b3b3;
     background: white;
+
+    ${breakpoint(device.tablet)} {
+      bottom: 5%;
+      left: 5%;
+      width: 90%;
+    }
 
     ${breakpoint(device.phone)} {
       left: 0;
@@ -193,6 +199,10 @@ const Angebot = ({ id, img, text }) => {
   );
 };
 
+const SliderWrapper = styled.div`
+  position: relative;
+`;
+
 const Home = () => {
   const [currentSlideIdx, setCurrentSlideIdx] = React.useState(0);
 
@@ -229,30 +239,34 @@ const Home = () => {
   return (
     <StyledHome>
       <h1>Home</h1>
-      <SlickSlider
-        arrows
-        dots
-        infinite
-        slidesToShow={1}
-        centerMode
-        focusOnSelect
-        centerPadding={0}
-        afterChange={setCurrentSlideIdx}
-        customPaging={customPaging}
-      >
-        {galleryImages.map(i => (
-          <img key={i} src={i} alt={getAltText(i)} />
+      <SliderWrapper>
+        <SlickSlider
+          arrows
+          dots
+          infinite
+          slidesToShow={1}
+          centerMode
+          focusOnSelect
+          autoplay
+          autoplaySpeed={4500}
+          centerPadding={0}
+          afterChange={setCurrentSlideIdx}
+          customPaging={customPaging}
+        >
+          {galleryImages.map(i => (
+            <img key={i} src={i} alt={getAltText(i)} />
+          ))}
+        </SlickSlider>
+        {galleryImages.map((i, idx) => (
+          <Hidden xsUp={idx !== currentSlideIdx} key={idx}>
+            {texts[idx].length > 0 ? (
+              <p className="slider-text" key={idx}>
+                {texts[idx]}
+              </p>
+            ) : null}
+          </Hidden>
         ))}
-      </SlickSlider>
-      {galleryImages.map((i, idx) => (
-        <Hidden xsUp={idx !== currentSlideIdx} key={idx}>
-          {texts[idx].length > 0 ? (
-            <p className="slider-text" key={idx}>
-              {texts[idx]}
-            </p>
-          ) : null}
-        </Hidden>
-      ))}
+      </SliderWrapper>
       <p>Entdecken Sie die passende Dienstleistung für Sie als ...</p>
       <div className="angebote">
         <Angebot id={0} img={unternehmenImage} text="Unternehmen" />

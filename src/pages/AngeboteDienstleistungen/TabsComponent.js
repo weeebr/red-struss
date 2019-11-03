@@ -6,7 +6,7 @@ import Tab from "@material-ui/core/Tab";
 import angeboteKmu from "../../assets/data/angebote-kmu";
 import angebotePrivat from "../../assets/data/angebote-privat";
 import styled from "styled-components";
-import { colors } from "../../theme";
+import { colors, breakpoint, device } from "../../theme";
 import TabPanel from "./TabPanel";
 
 function a11yProps(index) {
@@ -32,6 +32,15 @@ const StyledTabs = styled.div`
         background: rgba(231, 21, 0, 0.45);
         font-family: OpenSans;
         color: white;
+
+        &:not(:last-child) {
+          border-right: 1px solid white;
+
+          ${breakpoint(device.phone)} {
+            border-bottom: 1px solid white;
+            border-right: unset;
+          }
+        }
 
         &.Mui-selected,
         &:focus,
