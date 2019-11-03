@@ -16,13 +16,15 @@ const StyledTabPanel = styled.div`
 
     &::before {
       position: absolute;
-      top: -45px;
+      top: -5px;
       left: 0;
       content: "i";
-      font-size: 98px;
-      font-family: serif;
+      font-size: 68px;
+      top: -5px;
+      left: 0;
+      content: "i";
       color: #8abbe2;
-      font-style: italic;
+      font-family: OpenSansItalic;
     }
 
     p {
