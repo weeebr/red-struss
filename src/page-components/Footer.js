@@ -37,7 +37,7 @@ const StyledFooter = styled.footer`
     padding: 60px 20px 60px 40px;
 
     ${breakpoint(device.phone)} {
-      padding: 4%;
+      padding: 5%;
     }
 
     .footer-cards {

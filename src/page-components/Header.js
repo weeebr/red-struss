@@ -32,8 +32,7 @@ const StyledHeader = styled.header`
 
   ${breakpoint(device.phone)} {
     margin: 0;
-    padding: 4%;
-    background: white;
+    padding: 5%;
   }
 
   && a {

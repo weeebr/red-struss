@@ -142,7 +142,7 @@ const GlobalStyle = createGlobalStyle`
       }
 
       ${breakpoint(device.phone)} {
-        margin: 0 4% 80px 4%;
+        margin: 0 5% 80px 5%;
       }
 
       & > .content {

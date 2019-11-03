@@ -18,8 +18,8 @@ const StyledHamburger = styled.div`
   ${breakpoint(device.phone)} {
     position: fixed;
     top: 0;
-    right: 4%;
-    margin-top: 4%;
+    right: 5%;
+    margin-top: 5%;
   }
 
   &:hover {
