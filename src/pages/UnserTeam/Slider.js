@@ -15,7 +15,7 @@ const SliderWrapper = styled.div`
 
       .slick-track {
         margin-bottom: 10px;
-        padding-left: 25%;
+        display: flex;
       }
 
       .slick-slide {
@@ -23,10 +23,9 @@ const SliderWrapper = styled.div`
         position: relative;
         cursor: pointer;
         transform: scale(0.7);
-        margin: 0 -0.5%;
 
         &.slick-current {
-          margin: 0;
+          margin: 0 15px;
           transform: scale(1);
           transform-origin: center;
           z-index: 2;
