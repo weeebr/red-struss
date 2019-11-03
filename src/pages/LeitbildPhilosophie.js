@@ -5,6 +5,7 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import styled from "styled-components";
 import { typography, colors, device, breakpoint } from "./../theme";
+import HTMLEllipsis from "react-lines-ellipsis/lib/html";
 
 const Accordeon = styled.div`
   &&&& {
@@ -12,7 +13,7 @@ const Accordeon = styled.div`
     margin-left: -24px;
 
     ${breakpoint(device.phone)} {
-      margin-top: 0;
+      margin: 0;
     }
 
     .MuiExpansionPanel-root:before {
@@ -29,6 +30,7 @@ const Accordeon = styled.div`
 
       ${breakpoint(device.phone)} {
         padding: 0 3%;
+        margin-left: 0;
 
         .MuiExpansionPanelSummary-content {
           flex-direction: column;
@@ -49,7 +51,7 @@ const Accordeon = styled.div`
 
       .read-more {
         display: flex;
-        width: 888px;
+        width: calc(100% - 24px);
         justify-content: center;
         position: absolute;
         bottom: 20px;
@@ -72,6 +74,10 @@ const Accordeon = styled.div`
 
     & > div {
       box-shadow: none;
+
+      ${breakpoint(device.phone)} {
+        background: transparent;
+      }
     }
 
     .MuiExpansionPanelSummary-content {
@@ -84,6 +90,10 @@ const Accordeon = styled.div`
 
     .MuiExpansionPanelDetails-root {
       flex-direction: column;
+
+      ${breakpoint(device.phone)} {
+        padding: 0;
+      }
     }
 
     .MuiCollapse-container {
@@ -94,7 +104,11 @@ const Accordeon = styled.div`
         bottom: 0;
         left: -15px;
         right: -15px;
-        box-shadow: inset 0 -165px 79px -51px white;
+        box-shadow: inset 0 -185px 79px -51px white;
+
+        ${breakpoint(device.phone)} {
+          content: unset;
+        }
       }
 
       &.MuiCollapse-entered {
@@ -150,12 +164,18 @@ export const LeitbildPhilosophie = () => {
 
   const handleClick = idx => setExpanded(`panel${idx}`);
 
+  const isExpanded = idx => expanded === `panel${idx}`;
+
+  const showComponent = toggle => ({
+    display: toggle ? "block" : "none",
+  });
+
   return (
     <Accordeon>
       {data.map((d, idx) => (
-        <>
+        <React.Fragment key={idx}>
           <ExpansionPanel
-            expanded={expanded === `panel${idx}`}
+            expanded={isExpanded(idx)}
             onChange={handleChange(`panel${idx}`)}
             key={d}
           >
@@ -183,16 +203,36 @@ export const LeitbildPhilosophie = () => {
                 {d.subtitle}
               </p>
             </ExpansionPanelSummary>
+
             <ExpansionPanelDetails className="">
-              {d.text.map(t => (
-                <p key={t} dangerouslySetInnerHTML={{ __html: t }} />
-              ))}
+              <div
+                style={{
+                  marginTop: 14,
+                  ...showComponent(!isExpanded(idx)),
+                }}
+              >
+                <HTMLEllipsis
+                  unsafeHTML={d.text[0]}
+                  maxLine="3"
+                  ellipsis="..."
+                  basedOn="letters"
+                />
+              </div>
+
               <div className="read-more">
                 <button onClick={() => handleClick(idx)}>Mehr lesen...</button>
               </div>
+
+              {d.text.map(t => (
+                <p
+                  style={showComponent(isExpanded(idx))}
+                  key={t}
+                  dangerouslySetInnerHTML={{ __html: t }}
+                />
+              ))}
             </ExpansionPanelDetails>
           </ExpansionPanel>
-        </>
+        </React.Fragment>
       ))}
     </Accordeon>
   );
