@@ -32,14 +32,15 @@ const StyledAngebote = styled.div`
 
     &::before {
       position: absolute;
-      top: -45px;
+      top: -20px;
       left: 0;
       content: "i";
       font-size: 98px;
-      font-family: TimesNewRoman, "Times New Roman";
+      font-family: Times, TimesNewRoman, "Times New Roman";
       color: #8abbe2;
       font-style: italic;
       transition: all 0.6s ease;
+      line-height: 1;
     }
 
     p {
