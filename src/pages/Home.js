@@ -20,6 +20,10 @@ const StyledHome = styled.div`
     padding: 40px 0 10px 0;
     margin: 0;
     font-family: OpenSansBold;
+
+    ${breakpoint(device.phone)} {
+      text-align: center;
+    }
   }
 
   .slick-slider {
