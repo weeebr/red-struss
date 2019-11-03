@@ -137,6 +137,7 @@ const StyledAngebot = styled.a`
     align-items: center;
     margin-top: 20px;
     margin-bottom: 15%;
+    padding: 0 20px 20px 20px;
   }
 
   &:focus,
