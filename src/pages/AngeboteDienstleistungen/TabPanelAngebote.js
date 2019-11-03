@@ -109,8 +109,10 @@ const StyledAngebote = styled.div`
       color: white;
       transform: rotate(-6deg);
       z-index: 1;
+
       ${breakpoint(device.phone)} {
         left: 25%;
+        top: 290px;
       }
     }
   }
