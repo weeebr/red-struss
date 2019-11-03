@@ -23,12 +23,12 @@ const StyledDiv = styled.div`
 
   button {
     background: ${colors.primaryRed};
-    padding: 4px 8px;
+    padding: 12px 14px;
     margin-bottom: 40px;
     margin-top: 8px;
 
     &:not(:last-child) {
-      margin-right: 10px;
+      margin-right: 16px;
     }
   }
 `;
