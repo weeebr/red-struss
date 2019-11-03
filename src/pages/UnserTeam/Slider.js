@@ -7,48 +7,47 @@ import styled from "styled-components";
 import { colors, device, breakpoint } from "../../theme";
 
 const SliderWrapper = styled.div`
-  margin: 0 7%;
-
-  ${breakpoint(device.phone)} {
-    margin: 0;
-  }
+  margin: 0;
 
   .slick-slider {
     .slick-list {
       position: relative;
+      padding-left: 8%;
 
       .slick-track {
         margin-bottom: 10px;
-
-        ${breakpoint(device.phone)} {
-          padding-bottom: 4%;
-          margin: 0;
-        }
+        display: flex;
       }
 
       .slick-slide {
         transition: all 0.3s ease;
         position: relative;
         cursor: pointer;
-        transform: translateY(50%);
+        transform: translate(0, 45%);
+        display: flex;
+
+        & > div {
+          flex-basis: 100%;
+          text-align: center;
+        }
 
         &.slick-current {
-          transform-origin: top center;
-          transform: scale(2);
+          margin: 0;
+          flex-basis: 8%;
+          transform: translateY(0);
           z-index: 2;
-          margin: 0 2%;
 
           img {
-            border: 5px solid ${colors.primaryRed};
+            border: 4px solid ${colors.primaryRed};
 
             ${breakpoint(device.phone)} {
-              border: 3px solid ${colors.primaryRed};
+              border: 5px solid ${colors.primaryRed};
             }
           }
         }
 
         &:not(.slick-current) {
-          div::before {
+          & > div::before {
             position: absolute;
             content: "";
             display: block;
@@ -61,33 +60,12 @@ const SliderWrapper = styled.div`
 
         img {
           border-radius: 50%;
-          border: 10px solid ${colors.primaryRed};
+          border: 5px solid ${colors.primaryRed};
 
           ${breakpoint(device.phone)} {
-            border: 5px solid ${colors.primaryRed};
+            border: 6px solid ${colors.primaryRed};
           }
         }
-      }
-    }
-
-    .slick-prev {
-      left: -15%;
-    }
-
-    .slick-next {
-      right: -15%;
-    }
-
-    .slick-prev,
-    .slick-next {
-      top: calc(50% - 1px);
-
-      ${breakpoint(device.phone)} {
-        top: 50%;
-      }
-
-      &::before {
-        color: black;
       }
     }
   }
@@ -108,8 +86,7 @@ const Slider = React.forwardRef(({ mitarbeiter }, ref) => {
           centerMode
           arrows={false}
           focusOnSelect
-          centerPadding={40}
-          afterChange={setCurrentSlideIdx}
+          beforeChange={(i, idx) => setCurrentSlideIdx(idx)}
           responsive={[
             {
               breakpoint: 600,
