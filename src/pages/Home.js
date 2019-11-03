@@ -19,13 +19,18 @@ const StyledHome = styled.div`
   & > p:not(.slider-text) {
     padding: 40px 0;
     margin: 0;
+    font-family: OpenSansBold;
+
+    ${breakpoint(device.phone)} {
+      padding: 20px;
+    }
   }
 
   .slick-slider {
     margin-bottom: 140px;
 
     ${breakpoint(device.phone)} {
-      margin-bottom: 14%;
+      margin-bottom: 80px;
     }
 
     .slick-dots[style] {
@@ -88,8 +93,11 @@ const StyledHome = styled.div`
     left: 25%;
     width: 50%;
     padding: 20px;
+    margin-top: -20px;
     box-shadow: 0 0 14px #b3b3b3;
     background: white;
+    color: #505050;
+    font-family: OpenSansItalic;
 
     ${breakpoint(device.tablet)} {
       bottom: 5%;
@@ -101,6 +109,7 @@ const StyledHome = styled.div`
       left: 0;
       position: relative;
       width: 100%;
+      box-shadow: 0 0 2px 0px #d2d2d2, 0 0 4px 2px #d2d2d2;
     }
   }
 
@@ -202,6 +211,7 @@ const Angebot = ({ id, img, text }) => {
 
 const SliderWrapper = styled.div`
   position: relative;
+  margin-bottom: 40px;
 `;
 
 const Home = () => {
@@ -268,7 +278,7 @@ const Home = () => {
           </Hidden>
         ))}
       </SliderWrapper>
-      <p>Entdecken Sie die passende Dienstleistung für Sie als ...</p>
+      <p>Entdecken Sie die passende Dienst&shy;leistung für Sie als&nbsp;...</p>
       <div className="angebote">
         <Angebot id={0} img={unternehmenImage} text="Unternehmen" />
         <Angebot id={1} img={privaterHaushaltImage} text="privater Haushalt" />
