@@ -1,11 +1,13 @@
-import pascalWeber from "../../assets/images/team/pascal-weber.webp";
-import masoudSaedavi from "../../assets/images/team/masoud-saedavi.webp";
-import melissaPauli from "../../assets/images/team/melissa-pauli.webp";
-import michelOesch from "../../assets/images/team/michel-oesch.webp";
-import shannonSangiorgio from "../../assets/images/team/shannon-sangiorgio.webp";
-import yanikStruss from "../../assets/images/team/yanik-struss.webp";
-import jafarGhaffarnejad from "../../assets/images/team/jafar-ghaffarnejad.webp";
-import fabianBracher from "../../assets/images/team/fabian-bracher.webp";
+import pascalWeber from "../../assets/images/team/pascal-weber.jpg";
+import masoudSaedavi from "../../assets/images/team/masoud-saedavi.jpg";
+import melissaPauli from "../../assets/images/team/melissa-pauli.jpg";
+import michelOesch from "../../assets/images/team/michel-oesch.jpg";
+import shannonSangiorgio from "../../assets/images/team/shannon-sangiorgio.jpg";
+import yanikStruss from "../../assets/images/team/yanik-struss.jpg";
+import jafarGhaffarnejad from "../../assets/images/team/jafar-ghaffarnejad.jpg";
+import fabianBracher from "../../assets/images/team/fabian-bracher.jpg";
+import fabianKunz from "../../assets/images/team/fabian-kunz.jpg";
+import gerhardSchweingruber from "../../assets/images/team/gerhard-schweingruber.jpg";
 
 const images = {
   pascalWeber,
@@ -16,6 +18,8 @@ const images = {
   yanikStruss,
   jafarGhaffarnejad,
   fabianBracher,
+  fabianKunz,
+  gerhardSchweingruber,
 };
 
 export const getImage = name => {
