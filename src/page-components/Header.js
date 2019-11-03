@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/logo.webp";
+import logo from "../assets/images/logo.jpg";
 import styled from "styled-components";
 import { pageFullWidth } from "../theme/index";
 import { breakpoint, device } from "./../theme/index";
@@ -45,7 +45,7 @@ const StyledHeader = styled.header`
     ${breakpoint(device.phone)} {
       margin-top: 30px;
     }
-    
+
     @media (min-width: ${pageFullWidth + 130}px) {
       width: 277px;
     }

@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "../../theme";
-import aluImage from "../../assets/images/angebote/Alu.webp";
-import petImage from "../../assets/images/angebote/PET.webp";
-import paketImage from "../../assets/images/angebote/Paket.webp";
-import basicImage from "../../assets/images/angebote/Basic.webp";
-import eventImage from "../../assets/images/angebote/Event.webp";
-import apcImage from "../../assets/images/angebote/APC.webp";
+import aluImage from "../../assets/images/angebote/Alu.jpg";
+import petImage from "../../assets/images/angebote/PET.jpg";
+import paketImage from "../../assets/images/angebote/Paket.jpg";
+import basicImage from "../../assets/images/angebote/Basic.jpg";
+import eventImage from "../../assets/images/angebote/Event.jpg";
+import apcImage from "../../assets/images/angebote/APC.jpg";
 import Image from "../../generic-components/Image";
 import { breakpoint, device } from "./../../theme/index";
 
