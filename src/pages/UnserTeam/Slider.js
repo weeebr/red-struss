@@ -24,11 +24,19 @@ const SliderWrapper = styled.div`
         cursor: pointer;
         transform: scale(0.7);
 
+        ${breakpoint(device.phone)} {
+          margin: 0 -0.4%;
+        }
+
         &.slick-current {
           margin: 0 15px;
           transform: scale(1);
           transform-origin: center;
           z-index: 2;
+
+          ${breakpoint(device.phone)} {
+            margin: 0 5px;
+          }
 
           img {
             border: 4px solid ${colors.primaryRed};
@@ -82,7 +90,7 @@ const Slider = React.forwardRef(({ mitarbeiter }, ref) => {
         <SlickSlider
           ref={slider}
           infinite
-          slidesToShow={7 - 2} // - 2 because we scaled the sizes of inactive slides down
+          slidesToShow={5}
           speed={200}
           centerMode
           arrows={false}
@@ -92,7 +100,7 @@ const Slider = React.forwardRef(({ mitarbeiter }, ref) => {
             {
               breakpoint: 600,
               settings: {
-                slidesToShow: 5 - 2, // - 2 because we scaled the sizes of inactive slides down
+                slidesToShow: 2,
               },
             },
           ]}
