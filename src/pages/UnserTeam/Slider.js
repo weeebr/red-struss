@@ -12,33 +12,23 @@ const SliderWrapper = styled.div`
   .slick-slider {
     .slick-list {
       position: relative;
-      padding-left: 8%;
 
       .slick-track {
         margin-bottom: 10px;
-        display: flex;
+        padding-left: 25%;
       }
 
       .slick-slide {
         transition: all 0.3s ease;
         position: relative;
         cursor: pointer;
-        transform: translate(0, 45%);
-        display: flex;
-
-        ${breakpoint(device.phone)} {
-          transform: translate(0, 25%);
-        }
-
-        & > div {
-          flex-basis: 100%;
-          text-align: center;
-        }
+        transform: scale(0.7);
+        margin: 0 -0.5%;
 
         &.slick-current {
           margin: 0;
-          flex-basis: 8%;
-          transform: translateY(0);
+          transform: scale(1);
+          transform-origin: center;
           z-index: 2;
 
           img {
@@ -80,13 +70,21 @@ const Slider = React.forwardRef(({ mitarbeiter }, ref) => {
 
   const [currentSlideIdx, setCurrentSlideIdx] = React.useState(0);
 
+  const getClass = idx =>
+    idx === currentSlideIdx
+      ? "current"
+      : idx < currentSlideIdx
+      ? "prev"
+      : "next";
+
   return (
     <>
-      <SliderWrapper>
+      <SliderWrapper currentSlideIdx={currentSlideIdx}>
         <SlickSlider
           ref={slider}
           infinite
-          slidesToShow={7}
+          slidesToShow={7 - 2} // - 2 because we scaled the sizes of inactive slides down
+          speed={200}
           centerMode
           arrows={false}
           focusOnSelect
@@ -95,13 +93,17 @@ const Slider = React.forwardRef(({ mitarbeiter }, ref) => {
             {
               breakpoint: 600,
               settings: {
-                slidesToShow: 3,
+                slidesToShow: 5 - 2, // - 2 because we scaled the sizes of inactive slides down
               },
             },
           ]}
         >
           {mitarbeiter.map((m, idx) => (
-            <Image key={`img-${idx}`} src={getImage(m.name)} />
+            <Image
+              className={getClass(idx)}
+              key={`img-${idx}`}
+              src={getImage(m.name)}
+            />
           ))}
         </SlickSlider>
       </SliderWrapper>
